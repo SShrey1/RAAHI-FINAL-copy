@@ -37,10 +37,15 @@ class DiaryCollectionViewCell: UICollectionViewCell {
         
         userDiaryBackgroundView.layer.cornerRadius = 20
         userDiaryBackgroundView.layer.masksToBounds = false
+        /*
         userDiaryBackgroundView.layer.shadowColor = UIColor.black.cgColor
         userDiaryBackgroundView.layer.shadowOpacity = 0.2
         userDiaryBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 2)
         userDiaryBackgroundView.layer.shadowRadius = 4
+         */
+        
+        userDiaryImageView.layer.cornerRadius = 20
+        userDiaryImageView.layer.masksToBounds = true
     }
     
 }

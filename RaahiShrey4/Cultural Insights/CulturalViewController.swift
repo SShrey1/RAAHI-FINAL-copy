@@ -35,9 +35,9 @@ class CulturalViewController: UIViewController {
         categoriesCollectionView.dataSource = self
         categoriesCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
         
-        if let layout = categoriesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-                layout.scrollDirection = .horizontal
-            }
+//        if let layout = categoriesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//                layout.scrollDirection = .horizontal
+//            }
         
         insightsCollectionView.delegate = self
         insightsCollectionView.dataSource = self
@@ -98,7 +98,7 @@ extension CulturalViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == categoriesCollectionView {
-            return CGSize(width: 114, height: 100)
+            return CGSize(width: 70, height: 100)
         }
         else {
             return CGSize(width: 175 , height: 226)

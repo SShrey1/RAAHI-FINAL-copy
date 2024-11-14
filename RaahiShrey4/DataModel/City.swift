@@ -49,12 +49,12 @@ struct Diary {
 }
 
 let diaries : [Diary] = [
-    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "diary1")!),
-    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "diary2")!),
-    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "diary3")!),
-    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "diary4")!),
-    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "diary5")!),
-    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "diary6")!)
+    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "Diary1")!),
+    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "Diary2")!),
+    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "Diary3")!),
+    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "Diary7")!),
+    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "Diary12")!),
+    Diary(caption: "A Trip To Kolkata", name: "Akshat Rawat", location: "Kolkata", image: UIImage(named: "Diary6")!)
     
 ]
 
@@ -64,10 +64,10 @@ struct Selection {
 }
 
 let selections : [Selection] = [
-    Selection(title: "Adventure", image: UIImage(named: "banaras")!),
-    Selection(title: "Monuments", image: UIImage(named: "kolkata 3")!),
-    Selection(title: "Religious", image: UIImage(named: "kochi 3")!),
-    Selection(title: "Beaches", image: UIImage(named: "chennai 2")!),
+    Selection(title: "Adventure", image: UIImage(named: "Diary1")!),
+    Selection(title: "Monuments", image: UIImage(named: "Diary2")!),
+    Selection(title: "Religious", image: UIImage(named: "Diary3")!),
+    Selection(title: "Beaches", image: UIImage(named: "Diary4")!),
     ]
 
 

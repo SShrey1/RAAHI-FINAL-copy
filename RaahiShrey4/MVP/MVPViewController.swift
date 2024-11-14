@@ -23,7 +23,7 @@ class MVPViewController: UIViewController {
     @IBOutlet weak var diaryCollectionView: UICollectionView!
     
     
-    var ImgArray = ["kolkata 3", "kolkata 2", "hyderbad1", "chennai 2", "udaipur 2"]
+    var ImgArray = ["DurgaPuja", "BookFair", "Chhahu1", "Boisakh", "Poish"]
     var index = 0
     
     override func viewDidLoad() {
@@ -85,7 +85,7 @@ extension MVPViewController: UICollectionViewDataSource, UICollectionViewDelegat
         if collectionView == mvpCollectionView {
             return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         } else {
-            return CGSize(width: collectionView.frame.width / 2.5, height: collectionView.frame.height )
+            return CGSize(width: collectionView.frame.width / 2.1, height: 300 )
         }
             
         

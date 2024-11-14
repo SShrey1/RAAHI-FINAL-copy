@@ -18,17 +18,10 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         typeImageView.image = selection.image
         typeNameLabel.text = selection.title
         
-        typeImageView.layer.cornerRadius = typeImageView.frame.height / 2
-        typeImageView.clipsToBounds = true
-        
         
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        typeImageView.layer.cornerRadius = typeImageView.frame.height / 2
-        typeImageView.clipsToBounds = true
-    }
+    
     
     
 }
