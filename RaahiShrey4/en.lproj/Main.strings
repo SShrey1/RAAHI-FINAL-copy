@@ -1,0 +1,75 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2zD-Da-859"; */
+"2zD-Da-859.text" = "Label";
+
+/* Class = "UILabel"; text = "Wonderful Places to Visit,"; ObjectID = "5vf-w5-OX0"; */
+"5vf-w5-OX0.text" = "Wonderful Places to Visit,";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6xX-C2-kAW"; */
+"6xX-C2-kAW.text" = "Label";
+
+/* Class = "UIButton"; configuration.title = "Edit Profile"; ObjectID = "7AN-gQ-kfX"; */
+"7AN-gQ-kfX.configuration.title" = "Edit Profile";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7AN-gQ-kfX"; */
+"7AN-gQ-kfX.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7fJ-hB-Iwj"; */
+"7fJ-hB-Iwj.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JGX-1V-2aH"; */
+"JGX-1V-2aH.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "LwU-ST-SMK"; */
+"LwU-ST-SMK.title" = "Title";
+
+/* Class = "UILabel"; text = "Traveller's Diary"; ObjectID = "OdE-Yk-rpq"; */
+"OdE-Yk-rpq.text" = "Traveller's Diary";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SES-zg-lSV"; */
+"SES-zg-lSV.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Tqt-05-pV1"; */
+"Tqt-05-pV1.text" = "Label";
+
+/* Class = "UISegmentedControl"; UZ4-2r-3QK.segmentTitles[0] = "My Posts"; ObjectID = "UZ4-2r-3QK"; */
+"UZ4-2r-3QK.segmentTitles[0]" = "My Posts";
+
+/* Class = "UISegmentedControl"; UZ4-2r-3QK.segmentTitles[1] = "Itineraries"; ObjectID = "UZ4-2r-3QK"; */
+"UZ4-2r-3QK.segmentTitles[1]" = "Itineraries";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "VVb-Nv-0aV"; */
+"VVb-Nv-0aV.title" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "WKf-if-hO6"; */
+"WKf-if-hO6.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "XBb-gj-IPx"; */
+"XBb-gj-IPx.title" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XMI-uc-sAy"; */
+"XMI-uc-sAy.text" = "Label";
+
+/* Class = "UIButton"; configuration.title = "Create Trip"; ObjectID = "i9c-jt-p3K"; */
+"i9c-jt-p3K.configuration.title" = "Create Trip";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "i9c-jt-p3K"; */
+"i9c-jt-p3K.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jbg-R0-s8g"; */
+"jbg-R0-s8g.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nfC-Z9-dty"; */
+"nfC-Z9-dty.text" = "Label";
+
+/* Class = "UILabel"; text = "Shrey Agrawal"; ObjectID = "oqa-he-ccW"; */
+"oqa-he-ccW.text" = "Shrey Agrawal";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tIb-Fl-koT"; */
+"tIb-Fl-koT.text" = "Label";
+
+/* Class = "UILabel"; text = "Kolkata's Celebrations"; ObjectID = "vDc-RP-ZVy"; */
+"vDc-RP-ZVy.text" = "Kolkata's Celebrations";
+
+/* Class = "UILabel"; text = "Chennai"; ObjectID = "yH1-kc-jsw"; */
+"yH1-kc-jsw.text" = "Chennai";
