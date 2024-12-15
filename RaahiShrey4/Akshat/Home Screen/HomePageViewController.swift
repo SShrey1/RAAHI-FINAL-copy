@@ -5,6 +5,7 @@ class HomePageViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var profileButton: UIButton!
     
     private let sections = MockData.shared.pageData
