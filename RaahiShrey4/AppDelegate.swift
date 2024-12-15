@@ -6,16 +6,53 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
+import FirebaseAuth
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    
+    
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+        checkUserSignInStatus()
+        
         return true
     }
+    
+    func application(_ app : UIApplication, open url : URL, options : [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance.handle(url)
+    }
+    
+    func checkUserSignInStatus() {
+        if let user = Auth.auth().currentUser{
+            print("User is already Signed in : \(user.uid)")
+            showHomeScreen()
+        } else {
+            print("No user is signed in")
+            showLoginScreen()
+        }
+    }
+    
+    func showHomeScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
+    }
+    
+    func showLoginScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+    }
+    
+    
+    
 
     // MARK: UISceneSession Lifecycle
 
