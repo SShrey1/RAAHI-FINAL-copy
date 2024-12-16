@@ -33,8 +33,11 @@ class YourViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         openCamera()
     }
     
-    @IBAction func Photos(_ sender: Any) {
-        openPhotoGallery()
+    @IBAction func Photos(_ sender: UIButton) {
+       openPhotoGallery()
+        
+       
+        
     }
     var imageArray = ["pahadi1","pahadi2","pahadi3","pahadi4"]
     var index = 0

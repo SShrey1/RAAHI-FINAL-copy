@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xi9-hE-Jj3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qxf-By-iI8">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -236,7 +236,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Upload"/>
                                 <connections>
-                                    <segue destination="50M-1X-unk" kind="push" id="kXN-c3-blr"/>
+                                    <segue destination="Qxf-By-iI8" kind="push" id="CLr-0y-iO0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2660,7 +2660,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="person.crop.circle" catalog="system" title=""/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="uhX-8P-Oir"/>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="ZNR-qB-cTj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9h-bh-P8x">
@@ -3442,7 +3442,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
             <objects>
                 <viewController id="ERo-ij-vEE" customClass="PreviewViewController" customModule="RaahiShrey4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eFg-eW-OZw">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4JX-ua-tys">
@@ -3578,7 +3578,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="s2A-Dm-ZjW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="si1-Ux-R2H">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -3782,7 +3782,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aXZ-CF-wh3">
-                                                    <rect key="frame" x="150" y="56.000000000000007" width="55" height="65"/>
+                                                    <rect key="frame" x="150" y="56" width="55" height="64.999999999999972"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQw-pY-AKW">
                                                             <rect key="frame" x="0.0" y="0.0" width="54.333333333333336" height="21"/>
@@ -3892,7 +3892,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ros-sJ-mVM">
-                                <rect key="frame" x="16" y="44" width="123" height="97"/>
+                                <rect key="frame" x="16" y="59" width="123" height="82"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Upload Via ">
                                         <attributes>
@@ -4063,6 +4063,103 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8e-M6-t7t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2510.6870229007632" y="-1520.4225352112676"/>
+        </scene>
+        <!--Post Review View Controller-->
+        <scene sceneID="HHE-y9-Nl6">
+            <objects>
+                <viewController id="Qxf-By-iI8" customClass="PostReviewViewController" customModule="RaahiShrey4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hX8-gj-H5G">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PO0-Mo-1fJ">
+                                <rect key="frame" x="0.0" y="44" width="393" height="322"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3p9-Rj-Byt">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostReviewCollectionViewCell" id="p1I-mf-tts" customClass="PostReviewCollectionViewCell" customModule="RaahiShrey4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="b1J-rD-9nV">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eb0-7y-YT8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="eb0-7y-YT8" secondAttribute="bottom" id="EjB-na-jbe"/>
+                                                <constraint firstItem="eb0-7y-YT8" firstAttribute="leading" secondItem="b1J-rD-9nV" secondAttribute="leading" id="UFt-KH-6Ie"/>
+                                                <constraint firstAttribute="trailing" secondItem="eb0-7y-YT8" secondAttribute="trailing" id="cMF-fV-W8O"/>
+                                                <constraint firstItem="eb0-7y-YT8" firstAttribute="top" secondItem="b1J-rD-9nV" secondAttribute="top" id="ziO-V6-MbR"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="PostReviewImage" destination="eb0-7y-YT8" id="Pic-tc-I0S"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hk4-pd-zjU">
+                                <rect key="frame" x="16" y="523" width="361" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Share Experience" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S7y-2d-1u6">
+                                <rect key="frame" x="16" y="587" width="361" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQb-40-VGR">
+                                <rect key="frame" x="16" y="686" width="361" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Upload"/>
+                                <connections>
+                                    <action selector="uploadBtnTapped:" destination="Qxf-By-iI8" eventType="touchUpInside" id="ojl-wc-4Lh"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Crm-0j-UmJ">
+                                <rect key="frame" x="16" y="460" width="361" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kJh-ef-RMv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PO0-Mo-1fJ" firstAttribute="top" secondItem="kJh-ef-RMv" secondAttribute="top" id="4tp-u7-3hG"/>
+                            <constraint firstItem="kJh-ef-RMv" firstAttribute="trailing" secondItem="PO0-Mo-1fJ" secondAttribute="trailing" id="C6R-Va-KnT"/>
+                            <constraint firstItem="kJh-ef-RMv" firstAttribute="bottom" secondItem="PO0-Mo-1fJ" secondAttribute="bottom" constant="437" id="JjW-gp-ETE"/>
+                            <constraint firstItem="PO0-Mo-1fJ" firstAttribute="leading" secondItem="kJh-ef-RMv" secondAttribute="leading" id="kwJ-S9-2ih"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TQ0-X1-OKh">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="FDW-1N-Aap">
+                            <connections>
+                                <action selector="addBtnTapped:" destination="Qxf-By-iI8" id="z94-7q-k3D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="PostCollectionView" destination="PO0-Mo-1fJ" id="fsM-dL-pOr"/>
+                        <outlet property="txtCaption" destination="Hk4-pd-zjU" id="yc8-a4-50A"/>
+                        <outlet property="txtCity" destination="Crm-0j-UmJ" id="gro-86-xBp"/>
+                        <outlet property="txtexperience" destination="S7y-2d-1u6" id="cce-aC-Ykt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFc-RF-LyD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3310.6870229007632" y="-1520.4225352112676"/>
         </scene>
         <!--View Controller 3-->
         <scene sceneID="EaN-fW-zYv">
