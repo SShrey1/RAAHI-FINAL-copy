@@ -319,3 +319,5 @@ let data5: [Bungee] = [
     Bungee(title: "Wanderlust", imageName: "bj4", location: "New Delhi", Height: "52 m", cost: "Rs 3,000/ Per Person"),
     Bungee(title: "Gravity Adventure", imageName: "bj5", location: "Goa", Height: "25 m", cost: "Rs 500/ Per Person")
 ]
+
+
