@@ -321,3 +321,9 @@ let data5: [Bungee] = [
 ]
 
 
+
+//struct State : Codable {
+//    var id : String
+//    var title : String 
+//}
+

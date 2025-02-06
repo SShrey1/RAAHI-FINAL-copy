@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance.configuration = GIDConfiguration(clientID: clientID)
         
         GoogleButton.addTarget(self, action: #selector(signInWithGoogle), for: .touchUpInside)
+        GoogleButton.backgroundColor = UIColor.white
         
         checkUserSignInStatus()
         setUpAppleSignInButton()

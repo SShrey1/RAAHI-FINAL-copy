@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lmv-Qx-Yt5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WLa-jY-vBH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -4610,6 +4610,63 @@ Local Craft and Art Festivals (Nov-Mar)</string>
             </objects>
             <point key="canvasLocation" x="9274" y="2873"/>
         </scene>
+        <!--New List View Controller-->
+        <scene sceneID="vPe-ft-r7q">
+            <objects>
+                <viewController id="WLa-jY-vBH" customClass="NewListViewController" customModule="RaahiShrey4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ezR-WG-FED">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oLC-bg-lX4">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewListCell" id="2Oe-da-sjz" customClass="NewListCell" customModule="RaahiShrey4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Oe-da-sjz" id="YVM-w8-wnx">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHQ-Wb-WNr">
+                                                    <rect key="frame" x="20" y="11.000000000000002" width="353" height="21.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CHQ-Wb-WNr" firstAttribute="leading" secondItem="YVM-w8-wnx" secondAttribute="leadingMargin" id="ATF-iC-X7d"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CHQ-Wb-WNr" secondAttribute="trailing" id="Bel-iB-jkd"/>
+                                                <constraint firstItem="CHQ-Wb-WNr" firstAttribute="top" secondItem="YVM-w8-wnx" secondAttribute="topMargin" id="N17-Om-4Qq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CHQ-Wb-WNr" secondAttribute="bottom" id="PQH-fn-pXD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="CityLabel" destination="CHQ-Wb-WNr" id="9lw-LE-J23"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GiB-Uq-19w"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oLC-bg-lX4" firstAttribute="leading" secondItem="GiB-Uq-19w" secondAttribute="leading" id="LWQ-He-uVK"/>
+                            <constraint firstItem="GiB-Uq-19w" firstAttribute="trailing" secondItem="oLC-bg-lX4" secondAttribute="trailing" id="bju-N4-WZD"/>
+                            <constraint firstItem="oLC-bg-lX4" firstAttribute="top" secondItem="GiB-Uq-19w" secondAttribute="top" id="dCt-46-Fob"/>
+                            <constraint firstItem="GiB-Uq-19w" firstAttribute="bottom" secondItem="oLC-bg-lX4" secondAttribute="bottom" id="xoI-mB-0vT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="oLC-bg-lX4" id="7Wf-Pt-Co3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bm4-Xj-XaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12089" y="2831"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="1vE-kB-1di">
             <objects>
@@ -4864,6 +4921,58 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24o-Be-zYf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5225" y="-45"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="mRV-fB-Bfk">
+            <objects>
+                <viewController id="7VL-nG-aBd" customClass="TableViewController" customModule="RaahiShrey4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jcj-6g-5bq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jpo-JZ-IHm">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableTableViewCell" id="jTM-gb-H58" customClass="TableTableViewCell" customModule="RaahiShrey4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jTM-gb-H58" id="Hul-59-gEJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGb-qr-PrK">
+                                                    <rect key="frame" x="20" y="0.0" width="373" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityLabel" destination="aGb-qr-PrK" id="TM7-GY-Eze"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="C3I-W0-4dV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jpo-JZ-IHm" firstAttribute="bottom" secondItem="C3I-W0-4dV" secondAttribute="bottom" id="F8Q-Eo-zqc"/>
+                            <constraint firstItem="Jpo-JZ-IHm" firstAttribute="trailing" secondItem="C3I-W0-4dV" secondAttribute="trailing" id="Q13-5s-geR"/>
+                            <constraint firstItem="Jpo-JZ-IHm" firstAttribute="top" secondItem="C3I-W0-4dV" secondAttribute="top" id="cR9-hl-gAX"/>
+                            <constraint firstItem="Jpo-JZ-IHm" firstAttribute="leading" secondItem="C3I-W0-4dV" secondAttribute="leading" id="gYS-1S-lUs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableViewcity" destination="Jpo-JZ-IHm" id="RKI-9G-Mbw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w8b-qz-zZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="631" y="-656"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
