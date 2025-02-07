@@ -59,29 +59,35 @@ extension NewListViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCity = states[indexPath.row]
         
-        // Save the selected city to Firebase
-        firebaseManager.saveCity(stateList: selectedCity) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success:
-                    // Show a confirmation alert
-                    let alert = UIAlertController(title: "Saved", message: "\(selectedCity.title) saved successfully to Firebase!", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default))
-                    self.present(alert, animated: true)
-                    
-                    // Print confirmation to console
-                    print("City \(selectedCity.title) (ID: \(selectedCity.id)) saved successfully to Firebase!")
-                    
-                case .failure(let error):
-                    // Show an error alert
-                    let alert = UIAlertController(title: "Error", message: "Failed to save \(selectedCity.title): \(error.localizedDescription)", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default))
-                    self.present(alert, animated: true)
-                    
-                    // Print error to console
-                    print("Error saving city \(selectedCity.title) (ID: \(selectedCity.id)) to Firebase: \(error.localizedDescription)")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController {
+            
+                }
+                
+            // Save the selected city to Firebase
+            firebaseManager.saveCity(stateList: selectedCity) { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success:
+                        // Show a confirmation alert
+                        let alert = UIAlertController(title: "Saved", message: "\(selectedCity.title) saved successfully to Firebase!", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.present(alert, animated: true)
+                        
+                        // Print confirmation to console
+                        print("City \(selectedCity.title) (ID: \(selectedCity.id)) saved successfully to Firebase!")
+                        
+                    case .failure(let error):
+                        // Show an error alert
+                        let alert = UIAlertController(title: "Error", message: "Failed to save \(selectedCity.title): \(error.localizedDescription)", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.present(alert, animated: true)
+                        
+                        // Print error to console
+                        print("Error saving city \(selectedCity.title) (ID: \(selectedCity.id)) to Firebase: \(error.localizedDescription)")
+                    }
                 }
             }
         }
     }
-}
+

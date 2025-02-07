@@ -94,9 +94,6 @@ class LoginViewController: UIViewController {
                 strongSelf.PasswordText.isHidden = true
                 
                 
-                
-                
-                
             })
             
             
@@ -154,8 +151,8 @@ class LoginViewController: UIViewController {
     
     func showHomeScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
-        self.view.window?.rootViewController = homeViewController
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+        self.view.window?.rootViewController = tabBarController
         self.view.window?.makeKeyAndVisible()
     }
 
@@ -164,7 +161,7 @@ class LoginViewController: UIViewController {
     
     func setUpAppleSignInButton(){
         let applebtn = ASAuthorizationAppleIDButton()
-        applebtn.frame = CGRect(x: 20, y: (UIScreen.main.bounds.size.height - 355), width: (UIScreen.main.bounds.size.width - 40), height: 50)
+        applebtn.frame = CGRect(x: 20, y: (UIScreen.main.bounds.size.height - 350), width: (UIScreen.main.bounds.size.width - 40), height: 50)
         applebtn.addTarget(self, action: #selector(appleSignInTapped), for: .touchUpInside)
         
         self.view.addSubview(applebtn)
@@ -184,18 +181,7 @@ class LoginViewController: UIViewController {
         
     }
     
-//    @IBAction func SignUpTapped(_ sender: UIButton) {
-//        
-//        guard let name = UserText.text,
-//              let email = SignUpText.text,
-//              let password = PasswordText.text else { return
-//        }
-//        
-//        let newUser = User(name: name, email: email, passsword: password)
-//        
-//        print("User signed up: \(newUser)")
-//    }
-    
+
     @IBAction func SignInTapped(_ sender: Any) {
         
         performSegue(withIdentifier: "SignIn", sender: sender)
@@ -203,20 +189,6 @@ class LoginViewController: UIViewController {
         
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if segue.identifier == "SignIn"{
-//            
-//            let destinationVC = segue.destination as? SignInViewController
-//            if let button = sender as? UIButton{
-//                destinationVC.selectedInterest = button.titleLabel?.text
-//            }
-//            
-//            
-//        }
-//    }
-    
-
 }
 
 extension LoginViewController : ASAuthorizationControllerDelegate{
