@@ -1,5 +1,8 @@
 
 import UIKit
+import SDWebImage
+import FirebaseStorage
+
 
 class HomePageViewController: UIViewController {
     
@@ -7,6 +10,8 @@ class HomePageViewController: UIViewController {
     
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var profileButton: UIButton!
+    
+    
     
     private let sections = MockData.shared.pageData
     
@@ -102,11 +107,27 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
         switch sections[indexPath.section] {
         case .trending(let items):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryCollectionViewCell", for: indexPath) as! Story2CollectionViewCell
-            cell.setup(items[indexPath.row])
+            
+            FirebaseManager.shared.fetchImageURLs { urls in
+                if indexPath.row < urls.count {
+                    let updatedItem = ListItem(title: items[indexPath.row].title, image: urls[indexPath.row])
+                    DispatchQueue.main.async {
+                        cell.setup(updatedItem)
+                    }
+                }
+            }
+            
             return cell
         case .adventure(let items):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PortraitCollectionViewCell", for: indexPath) as! PortraitCollectionViewCell
-            cell.setup(items[indexPath.row])
+            FirebaseManager.shared.fetchImageURLs2 { urls in
+                if indexPath.row < urls.count {
+                    let updatedItem = ListItem(title: items[indexPath.row].title, image: urls[indexPath.row])
+                    DispatchQueue.main.async {
+                        cell.setup(updatedItem)
+                    }
+                }
+            }
             return cell
         case .diary(let items):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LandscapeCollectionViewCell", for: indexPath) as! LandscapeCollectionViewCell
@@ -114,8 +135,6 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
             return cell
         }
     }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {

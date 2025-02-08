@@ -206,13 +206,15 @@ struct ListItem {
 struct MockData {
     static let shared = MockData()
     
-    private let trending: ListSection = {
+    private let trending: ListSection
+    = {
         .trending([.init(title: "", image: "1"),
                   .init(title: "", image: "2"),
                   .init(title: "", image: "3"),
                   .init(title: "", image: "4"),
                   .init(title: "", image: "5"),
-                  .init(title: "", image: "6")])
+                  .init(title: "", image: "6")
+        ])
     }()
     
     private let adventure: ListSection = {
