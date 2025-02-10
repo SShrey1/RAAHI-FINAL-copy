@@ -27,25 +27,25 @@ class NewListViewController: UIViewController {
         states = JSONLoader.loadCities()
 
         // Optionally, fetch cities from Firebase to override or merge data
-        fetchCitiesFromFirebase()
+//        fetchCitiesFromFirebase()
     }
 
-    private func fetchCitiesFromFirebase() {
-        firebaseManager.fetchCities { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let fetchedCities):
-                    self?.states = fetchedCities
-                    self?.tableView.reloadData()
-                case .failure(let error):
-                    print("Error fetching cities: \(error.localizedDescription)")
-                }
-            }
-        }
-    }
+//    private func fetchCitiesFromFirebase() {
+//        firebaseManager.fetchCities { [weak self] result in
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .success(let fetchedCities):
+//                    self?.states = fetchedCities
+//                    self?.tableView.reloadData()
+//                case .failure(let error):
+//                    print("Error fetching cities: \(error.localizedDescription)")
+//                }
+//            }
+//        }
+//    }
 }
 
-extension NewListViewController : UITableViewDataSource, UITableViewDelegate {
+extension NewListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return states.count
     }
@@ -57,37 +57,8 @@ extension NewListViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCity = states[indexPath.row]
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController {
-            
-                }
-                
-            // Save the selected city to Firebase
-            firebaseManager.saveCity(stateList: selectedCity) { result in
-                DispatchQueue.main.async {
-                    switch result {
-                    case .success:
-                        // Show a confirmation alert
-                        let alert = UIAlertController(title: "Saved", message: "\(selectedCity.title) saved successfully to Firebase!", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default))
-                        self.present(alert, animated: true)
-                        
-                        // Print confirmation to console
-                        print("City \(selectedCity.title) (ID: \(selectedCity.id)) saved successfully to Firebase!")
-                        
-                    case .failure(let error):
-                        // Show an error alert
-                        let alert = UIAlertController(title: "Error", message: "Failed to save \(selectedCity.title): \(error.localizedDescription)", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "OK", style: .default))
-                        self.present(alert, animated: true)
-                        
-                        // Print error to console
-                        print("Error saving city \(selectedCity.title) (ID: \(selectedCity.id)) to Firebase: \(error.localizedDescription)")
-                    }
-                }
-            }
-        }
+        let selectedCity = states[indexPath.row].title
+        UserDefaults.standard.set(selectedCity, forKey: "selectedCity")
+        print("City saved: \(selectedCity)")  // Debugging purpose
     }
-
+}

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class InsightsCollectionViewCell: UICollectionViewCell {
     
@@ -22,22 +23,26 @@ class InsightsCollectionViewCell: UICollectionViewCell {
     
     
     func setup3(with insite: Insite) {
+        // Load image from Assets folder
+        insiteImage.image = UIImage(named: insite.imageURL) ?? UIImage(named: "placeholder") // Use placeholder if image not found
         
-        insiteImage.image = insite.image
+        if let image = UIImage(named: insite.imageURL) {
+            print("✅ Successfully loaded image: \(insite.imageURL)")
+        } else {
+            print("❌ Failed to load image: \(insite.imageURL)")
+        }
+        
         NameLabel.text = insite.title
         typeLabel.text = insite.type
         priceLabel.text = insite.price
         
+        // Image Styling
         insiteImage.layer.cornerRadius = 20
         insiteImage.layer.masksToBounds = true
         
+        // View Styling
         insiteView.layer.cornerRadius = 20
         insiteView.layer.masksToBounds = true
-        
-        
-        
-        
-        
     }
-    
-}
+
+    }

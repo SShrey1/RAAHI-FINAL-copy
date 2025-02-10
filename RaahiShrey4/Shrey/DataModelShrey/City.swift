@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 struct City {
     let title : String
@@ -14,15 +15,15 @@ struct City {
 
 let cities : [City] = [
     City(title: "Chennai", image: UIImage(named: "chennai 2")!),
-    City(title: "Varanasi", image: UIImage(named: "banaras")!),
-    City(title: "Kolkata", image: UIImage(named: "kolkata 3")!),
-    City(title: "Kochi", image: UIImage(named: "kochi 3")!),
-    City(title: "Hyderabad", image: UIImage(named: "hyderbad1")!),
-    City(title: "Udaipur", image: UIImage(named: "udaipur 2")!),
-    City(title: "Delhi", image: UIImage(named: "delhi 2")!),
-    City(title: "Shimla", image: UIImage(named: "shimla")!),
-    City(title: "Tirupati", image: UIImage(named: "tirupati")!),
-    City(title: "Pondicherry", image: UIImage(named: "pondicherry")!)
+//    City(title: "Varanasi", image: UIImage(named: "banaras")!),
+//    City(title: "Kolkata", image: UIImage(named: "kolkata 3")!),
+//    City(title: "Kochi", image: UIImage(named: "kochi 3")!),
+//    City(title: "Hyderabad", image: UIImage(named: "hyderbad1")!),
+//    City(title: "Udaipur", image: UIImage(named: "udaipur 2")!),
+//    City(title: "Delhi", image: UIImage(named: "delhi 2")!),
+//    City(title: "Shimla", image: UIImage(named: "shimla")!),
+//    City(title: "Tirupati", image: UIImage(named: "tirupati")!),
+//    City(title: "Pondicherry", image: UIImage(named: "pondicherry")!)
     
     ]
 
@@ -70,27 +71,62 @@ let selections : [Selection] = [
     Selection(title: "Beaches", image: UIImage(named: "image 472")!),
     ]
 
-
-struct Insite {
-    let title : String
-    let type : String
-    let price : String
-    let image : UIImage
-    
+struct Insite: Codable {
+    let title: String
+    let type: String
+    let price: String
+    let imageURL: String  // Changed from UIImage to String for Codable support
+    let city: String
 }
 
-let insites : [Insite] = [
-    Insite(title: "St. Thomas Cathedral Basilica", type: "Shrines", price: "Free", image: UIImage(named: "St Thomas")!),
-    Insite(title: "Parthasarthy Temple", type: "Shrines", price: "Free", image: UIImage(named: "Parthasarthy")!),
-    Insite(title: "Walajah Big Mosque", type: "Religious", price: "Free", image: UIImage(named: "Walajah")!),
-    Insite(title: "Meenakshi Temple", type: "Shrines", price: "Free", image: UIImage(named: "Mennakshi")!),
-    Insite(title: "Blu Flag Beach", type: "Beaches", price: "Free", image: UIImage(named: "Blu Flag")!),
-    Insite(title: "VGP Universal Kingdom", type: "Adventure", price: "Rs. 850", image: UIImage(named: "VGP")!),
-    Insite(title: "Shore Temple, Mahabalipuram", type: "Beaches", price: "Rs. 50", image: UIImage(named: "Shore Temple")!),
-    Insite(title: "Marina Beach", type: "Monuments", price: "Free", image: UIImage(named: "Marina")!),
+// Sample insights for multiple cities
+let insites: [Insite] = [
+    // Chennai
+    Insite(title: "St. Thomas Cathedral Basilica", type: "Shrines", price: "Free", imageURL: "chennai1", city: "Chennai"),
+    Insite(title: "Parthasarthy Temple", type: "Shrines", price: "Free", imageURL: "chennai2", city: "Chennai"),
+    Insite(title: "Walajah Big Mosque", type: "Shrines", price: "Free", imageURL: "chennai3", city: "Chennai"),
+    Insite(title: "Marina Beach", type: "Beaches", price: "Free", imageURL: "chennai4", city: "Chennai"),
+    Insite(title: "Kapaleeshwarar Temple", type: "Shrines", price: "Free", imageURL: "chennai5", city: "Chennai"),
+
+    // Mumbai
+    Insite(title: "Gateway of India", type: "Monuments", price: "Free", imageURL: "mumbai1", city: "Mumbai"),
+    Insite(title: "Marine Drive", type: "Beaches", price: "Free", imageURL: "mumbai2", city: "Mumbai"),
+    Insite(title: "Elephanta Caves", type: "Monuments", price: "Rs. 40", imageURL: "mumbai3", city: "Mumbai"),
+    Insite(title: "Chhatrapati Shivaji Terminus", type: "Monuments", price: "Free", imageURL: "mumbai4", city: "Mumbai"),
+    Insite(title: "Haji Ali Dargah", type: "Shrines", price: "Free", imageURL: "mumbai10", city: "Mumbai"),
+
+    // Delhi
+    Insite(title: "Red Fort", type: "Monuments", price: "Rs. 35", imageURL: "delhi6", city: "Delhi"),
+    Insite(title: "India Gate", type: "Monuments", price: "Free", imageURL: "delhi2", city: "Delhi"),
+    Insite(title: "Qutub Minar", type: "Monuments", price: "Rs. 30", imageURL: "delhi3", city: "Delhi"),
+    Insite(title: "Humayun’s Tomb", type: "Monuments", price: "Rs. 40", imageURL: "delhi8", city: "Delhi"),
+    Insite(title: "Lotus Temple", type: "Shrines", price: "Free", imageURL: "delhi5", city: "Delhi"),
     
+        Insite(title: "Ujjayanta Palace", type: "Monuments", price: "Rs. 20", imageURL: "agartala1", city: "Agartala"),
+        Insite(title: "Neermahal", type: "Monuments", price: "Rs. 30", imageURL: "agartala2", city: "Agartala"),
+        Insite(title: "Tripura Sundari Temple", type: "Shrines", price: "Free", imageURL: "agartala3", city: "Agartala"),
+        Insite(title: "Sepahijala Wildlife Sanctuary", type: "Adventure", price: "Rs. 50", imageURL: "agartala4", city: "Agartala"),
+        Insite(title: "Heritage Park", type: "Parks", price: "Adventure", imageURL: "agartala5", city: "Agartala"),
+        Insite(title: "Chaturdash Devta Temple", type: "Shrines", price: "Free", imageURL: "agartala6", city: "Agartala"),
+        Insite(title: "Jagannath Temple", type: "Shrines", price: "Free", imageURL: "agartala7", city: "Agartala"),
+        Insite(title: "Jampui Hills", type: "Adventure", price: "Free", imageURL: "agartala8", city: "Agartala"),
+
+        // Ahmedabad
+        Insite(title: "Sabarmati Ashram", type: "Monuments", price: "Free", imageURL: "ahmedabad1", city: "Ahmedabad"),
+        Insite(title: "Kankaria Lake", type: "Adventure", price: "Free", imageURL: "ahmedabad2", city: "Ahmedabad"),
+        Insite(title: "Adalaj Stepwell", type: "MOnuments", price: "Rs. 20", imageURL: "ahmedabad3", city: "Ahmedabad"),
+        Insite(title: "Sidi Saiyyed Mosque", type: "Shrines", price: "Free", imageURL: "ahmedabad4", city: "Ahmedabad"),
+        Insite(title: "Jhulta Minar", type: "Monuments", price: "Rs. 10", imageURL: "ahmedabad6", city: "Ahmedabad"),
+
+        // Agra
+        Insite(title: "Taj Mahal", type: "Monuments", price: "Rs. 50", imageURL: "agra1", city: "Agra"),
+        Insite(title: "Agra Fort", type: "Monuments", price: "Rs. 40", imageURL: "agra2", city: "Agra"),
+        Insite(title: "Fatehpur Sikri", type: "Monuments", price: "Rs. 30", imageURL: "agra3", city: "Agra"),
+        Insite(title: "Mehtab Bagh", type: "Adventure", price: "Rs. 20", imageURL: "agra4", city: "Agra"),
+        Insite(title: "Itmad-ud-Daulah's Tomb", type: "Monuments", price: "Rs. 25", imageURL: "agra5", city: "Agra"),
     
-    ]
+]
+
 
 struct Popular {
     let title : String
@@ -266,7 +302,7 @@ struct Trek {
 }
 
 let data2: [Trek] = [
-    Trek(title: "Kashmir Great Lakes Trek", imageName: "t1", location: "Sonmarg, J&K", duration: "6 Days", cost: "Rs 17,950/ Per Person"),
+    Trek(title: "Kashmir Lakes Trek", imageName: "t1", location: "Sonmarg, J&K", duration: "6 Days", cost: "Rs 17,950/ Per Person"),
     Trek(title: "Bhrigu Lake Trek", imageName: "t2", location: "Manali, Himachal Pradesh", duration: "5 Days", cost: "Rs 4,200/ Per Person"),
     Trek(title: "Hampta Pass Trek", imageName: "t3", location: "Manali, Himachal Pradesh", duration: "5 Days", cost: "Rs 11,500/ Per Person"),
     Trek(title: "Sandakphu Trek", imageName: "t4", location: "Dhotrey, West Bengal", duration: "7 Days", cost: "Rs 12,600/ Per Person"),
@@ -328,4 +364,6 @@ let data5: [Bungee] = [
 //    var id : String
 //    var title : String 
 //}
+
+
 

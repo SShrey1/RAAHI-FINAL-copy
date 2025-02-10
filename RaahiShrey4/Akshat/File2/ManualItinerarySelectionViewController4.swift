@@ -8,96 +8,42 @@ import UIKit
 
 class ManualItinerarySelectionViewController4: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
     
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return data.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let manualItineraryList = data[indexPath.row]
-//        let cell1 = table4.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as! CustomTableViewCell1
-//        cell1.Title1.text = manualItineraryList.title4
-//        cell1.Title2.text = manualItineraryList.title5
-//        cell1.Title3.text = manualItineraryList.title6
-//        cell1.iconImageView.image = UIImage(named: manualItineraryList.image4)
-//        cell1.iconImageView.layer.cornerRadius = 10
-//        return cell1
-//        
-//    }
-//    
-    
     
     @IBOutlet weak var manualSearchBar: UISearchBar!
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    //    var filteredData: [manualItineraryList] = []
-
-    
     @IBOutlet weak var table4: UITableView!
-    
     @IBOutlet weak var table5: UITableView!
-    
-//    struct manualItineraryList{
-//        let title4: String
-//        let title5: String
-//        let title6: String
-//        let image4: String
-//    }
-//    let data: [manualItineraryList] = [
-//        manualItineraryList(title4: "St. Thomas Cathedral Basilica", title5: "Catholic Cathedral", title6: "Duration: 1-2 hours", image4: "image 57"),
-//        manualItineraryList(title4: "Arulmigu Shri Parthasarthy Perumal Temple", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 52"),
-//        manualItineraryList(title4: "VGP Universal Kingdom", title5: "Amusement Park", title6: "Duration: 3-4 hours", image4: "image 235"),
-//        manualItineraryList(title4: "Walajah Big Mosque", title5: "Mosque", title6: "Duration: 3-4 hours", image4: "image 59"),
-//        manualItineraryList(title4: "Meenakshi Temple", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 229"),
-//        manualItineraryList(title4: "Shore Temple, Mahabalipuram", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 58"),
-//        manualItineraryList(title4: "Blue Flag Beach", title5: "Beach", title6: "Duration: 3-4 hours", image4: "blue"),
-//        manualItineraryList(title4: "Marina Beach", title5: "Beach", title6: "Duration: 1-2 hours", image4: "image 59"),
-//        
-//    ]
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        filteredData = data
-//        manualSearchBar.delegate = self
-//        table4.dataSource = self
-//        table4.delegate = self
-//        
-//    }
-//    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
-//    
-//}
-    
     
     struct manualItineraryList {
             let title4: String
             let title5: String
             let title6: String
             let image4: String
+            let city: String
         }
 
         // Data array
         let data: [manualItineraryList] = [
-            manualItineraryList(title4: "St. Thomas Cathedral Basilica", title5: "Catholic Cathedral", title6: "Duration: 1-2 hours", image4: "image 57"),
-            manualItineraryList(title4: "Arulmigu Shri Parthasarthy Perumal Temple", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 52"),
-            manualItineraryList(title4: "VGP Universal Kingdom", title5: "Amusement Park", title6: "Duration: 3-4 hours", image4: "image 235"),
-            manualItineraryList(title4: "Walajah Big Mosque", title5: "Mosque", title6: "Duration: 3-4 hours", image4: "image 59"),
-            manualItineraryList(title4: "Meenakshi Temple", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 229"),
-            manualItineraryList(title4: "Shore Temple, Mahabalipuram", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 58"),
-            manualItineraryList(title4: "Blue Flag Beach", title5: "Beach", title6: "Duration: 3-4 hours", image4: "blue"),
-            manualItineraryList(title4: "Marina Beach", title5: "Beach", title6: "Duration: 1-2 hours", image4: "image 59"),
+            manualItineraryList(title4: "St. Thomas Cathedral Basilica", title5: "Catholic Cathedral", title6: "Duration: 1-2 hours", image4: "image 57", city: "Chennai"),
+            manualItineraryList(title4: "Arulmigu Shri Parthasarthy Perumal Temple", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 52", city: "Chennai"),
+            manualItineraryList(title4: "VGP Universal Kingdom", title5: "Amusement Park", title6: "Duration: 3-4 hours", image4: "image 235", city: "Chennai"),
+            manualItineraryList(title4: "Walajah Big Mosque", title5: "Mosque", title6: "Duration: 3-4 hours", image4: "image 59", city: "Chennai"),
+            manualItineraryList(title4: "Meenakshi Temple", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 229", city: "Chennai"),
+            manualItineraryList(title4: "Shore Temple, Mahabalipuram", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 58", city: "Chennai"),
+            manualItineraryList(title4: "Blue Flag Beach", title5: "Beach", title6: "Duration: 3-4 hours", image4: "blue", city: "Chennai"),
+            manualItineraryList(title4: "Marina Beach", title5: "Beach", title6: "Duration: 1-2 hours", image4: "image 59", city: "Chennai"),
         ]
     
     let data1: [manualItineraryList] = [
         
-        manualItineraryList(title4: "Blue Flag Beach", title5: "Beach", title6: "Duration: 3-4 hours", image4: "blue"),
-        manualItineraryList(title4: "Marina Beach", title5: "Beach", title6: "Duration: 1-2 hours", image4: "image 59"),
-        manualItineraryList(title4: "VGP Universal Kingdom", title5: "Amusement Park", title6: "Duration: 3-4 hours", image4: "image 235"),
-        manualItineraryList(title4: "Walajah Big Mosque", title5: "Mosque", title6: "Duration: 3-4 hours", image4: "image 59"),
-        manualItineraryList(title4: "Meenakshi Temple", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 229"),
-        manualItineraryList(title4: "Shore Temple, Mahabalipuram", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 58"),
-        manualItineraryList(title4: "St. Thomas Cathedral Basilica", title5: "Catholic Cathedral", title6: "Duration: 1-2 hours", image4: "image 57"),
-        manualItineraryList(title4: "Arulmigu Shri Parthasarthy Perumal Temple", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 52"),
+        manualItineraryList(title4: "Blue Flag Beach", title5: "Beach", title6: "Duration: 3-4 hours", image4: "blue", city: "Chennai"),
+        manualItineraryList(title4: "Marina Beach", title5: "Beach", title6: "Duration: 1-2 hours", image4: "image 59", city: "Chennai"),
+        manualItineraryList(title4: "VGP Universal Kingdom", title5: "Amusement Park", title6: "Duration: 3-4 hours", image4: "image 235", city: "Chennai"),
+        manualItineraryList(title4: "Walajah Big Mosque", title5: "Mosque", title6: "Duration: 3-4 hours", image4: "image 59", city: "Chennai"),
+        manualItineraryList(title4: "Meenakshi Temple", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 229", city: "Chennai"),
+        manualItineraryList(title4: "Shore Temple, Mahabalipuram", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 58", city: "Chennai"),
+        manualItineraryList(title4: "St. Thomas Cathedral Basilica", title5: "Catholic Cathedral", title6: "Duration: 1-2 hours", image4: "image 57", city: "Chennai"),
+        manualItineraryList(title4: "Arulmigu Shri Parthasarthy Perumal Temple", title5: "Hindu Temple", title6: "Duration: 1-2 hours", image4: "image 52", city: "Chennai"),
         
         
     ]
@@ -105,6 +51,7 @@ class ManualItinerarySelectionViewController4: UIViewController, UITableViewData
 
         // Filtered data for search results
         var filteredData: [manualItineraryList] = []
+    
 
         override func viewDidLoad() {
             super.viewDidLoad()

@@ -108,6 +108,7 @@
                                             <outlet property="CityImageView" destination="U8i-pb-sLm" id="vhf-U1-323"/>
                                             <outlet property="CityLabel" destination="Tqt-05-pV1" id="ATd-Vx-xYR"/>
                                             <outlet property="CityView" destination="FvT-78-RR4" id="qZR-mM-U5i"/>
+                                            <segue destination="lzF-fH-IMv" kind="show" id="SCA-Mm-A1g"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -219,7 +220,6 @@
                                             <outlet property="itineraryTitleLabel" destination="nfC-Z9-dty" id="kDc-3B-KIZ"/>
                                             <outlet property="itineraryTypeLabel" destination="6xX-C2-kAW" id="3MG-7N-2EE"/>
                                             <outlet property="itinerayCardView" destination="nwS-V2-oLm" id="tAb-Jm-H6P"/>
-                                            <segue destination="ldk-RP-WtZ" kind="push" id="6fZ-WF-AWV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -415,7 +415,7 @@
                                             <outlet property="userDiaryImageView" destination="Mgy-x9-urY" id="DF4-Pt-LpL"/>
                                             <outlet property="userDiaryLocationLabel" destination="XMI-uc-sAy" id="itR-tW-7vd"/>
                                             <outlet property="userDiaryNameLabel" destination="SES-zg-lSV" id="Y1O-6g-zLa"/>
-                                            <segue destination="SDw-hy-pzu" kind="push" id="tuj-1U-Sep"/>
+                                            <segue destination="ldk-RP-WtZ" kind="show" id="hOL-Ho-KUD"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -845,24 +845,13 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wonderful Places to Visit," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vf-w5-OX0">
-                                <rect key="frame" x="16" y="103" width="271" height="28.666666666666657"/>
+                                <rect key="frame" x="16" y="84" width="271" height="28.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9c-jt-p3K">
-                                <rect key="frame" x="16" y="720" width="361" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="pOV-rn-ZrO"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Create Trip"/>
-                                <connections>
-                                    <segue destination="SBL-mG-TWB" kind="show" id="IIu-OJ-dIB"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Md-PP-OPU">
-                                <rect key="frame" x="16" y="367" width="361" height="337"/>
+                                <rect key="frame" x="16" y="355" width="361" height="414"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="73q-o0-uXR">
                                     <size key="itemSize" width="185" height="226"/>
@@ -942,14 +931,8 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chennai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yH1-kc-jsw">
-                                <rect key="frame" x="16" y="131.66666666666666" width="91" height="29"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <searchBar contentMode="redraw" barStyle="blackTranslucent" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="602-zb-6KU">
-                                <rect key="frame" x="16" y="311" width="313.66666666666669" height="56"/>
+                                <rect key="frame" x="16" y="299" width="313.66666666666669" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -961,7 +944,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                 </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSx-gA-OyQ">
-                                <rect key="frame" x="16" y="168" width="361" height="140"/>
+                                <rect key="frame" x="16" y="156" width="361" height="140"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 470" translatesAutoresizingMaskIntoConstraints="NO" id="N4l-kZ-E2S">
                                         <rect key="frame" x="0.0" y="22" width="70" height="70"/>
@@ -1056,33 +1039,32 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                     <segue destination="lhq-zL-I9l" kind="push" identifier="aisegue" id="I2Y-gQ-vvG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chennai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yH1-kc-jsw">
+                                <rect key="frame" x="16" y="120" width="342" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GcA-sH-zIA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Md-PP-OPU" firstAttribute="top" secondItem="VeK-3G-AiY" secondAttribute="bottom" constant="10.67" id="18S-Ao-Kg5"/>
-                            <constraint firstItem="i9c-jt-p3K" firstAttribute="top" secondItem="6Md-PP-OPU" secondAttribute="bottom" constant="16" id="1GL-8V-8Qi"/>
-                            <constraint firstItem="i9c-jt-p3K" firstAttribute="trailing" secondItem="6Md-PP-OPU" secondAttribute="trailing" id="7w3-et-3xR"/>
-                            <constraint firstItem="GcA-sH-zIA" firstAttribute="trailing" secondItem="5vf-w5-OX0" secondAttribute="trailing" constant="106" id="Ci6-dr-Km4"/>
-                            <constraint firstItem="602-zb-6KU" firstAttribute="top" secondItem="yH1-kc-jsw" secondAttribute="bottom" constant="150.33000000000001" id="F7N-KX-2cK"/>
+                            <constraint firstItem="GcA-sH-zIA" firstAttribute="trailing" secondItem="yH1-kc-jsw" secondAttribute="trailing" constant="35" id="Iz6-Jd-AzD"/>
                             <constraint firstItem="VeK-3G-AiY" firstAttribute="top" secondItem="GcA-sH-zIA" secondAttribute="top" constant="207" id="Jzu-5a-h6i"/>
-                            <constraint firstItem="yH1-kc-jsw" firstAttribute="top" secondItem="5vf-w5-OX0" secondAttribute="bottom" id="Kz4-pJ-2hR"/>
-                            <constraint firstItem="GcA-sH-zIA" firstAttribute="trailing" secondItem="yH1-kc-jsw" secondAttribute="trailing" constant="286" id="LBW-Qa-gmU"/>
-                            <constraint firstItem="yH1-kc-jsw" firstAttribute="leading" secondItem="GcA-sH-zIA" secondAttribute="leading" constant="16" id="LTI-7v-B3h"/>
+                            <constraint firstItem="GcA-sH-zIA" firstAttribute="trailing" secondItem="5vf-w5-OX0" secondAttribute="trailing" constant="106" id="K4E-9R-RPa"/>
+                            <constraint firstItem="GcA-sH-zIA" firstAttribute="trailing" secondItem="6Md-PP-OPU" secondAttribute="trailing" constant="16" id="LE6-hv-0sp"/>
+                            <constraint firstItem="5vf-w5-OX0" firstAttribute="top" secondItem="vw4-mm-5QE" secondAttribute="top" constant="84" id="MzN-Il-OB0"/>
+                            <constraint firstItem="6Md-PP-OPU" firstAttribute="leading" secondItem="GcA-sH-zIA" secondAttribute="leading" constant="16" id="RxD-A7-6a7"/>
                             <constraint firstItem="BSx-gA-OyQ" firstAttribute="leading" secondItem="GcA-sH-zIA" secondAttribute="leading" constant="16" id="S3I-iq-D0W"/>
-                            <constraint firstItem="6Md-PP-OPU" firstAttribute="top" secondItem="602-zb-6KU" secondAttribute="bottom" id="THN-3e-AoM"/>
                             <constraint firstItem="602-zb-6KU" firstAttribute="top" secondItem="BSx-gA-OyQ" secondAttribute="bottom" constant="3" id="WnC-gM-SEC"/>
-                            <constraint firstItem="i9c-jt-p3K" firstAttribute="leading" secondItem="6Md-PP-OPU" secondAttribute="leading" id="aDR-g4-R4Y"/>
+                            <constraint firstItem="6Md-PP-OPU" firstAttribute="bottom" secondItem="GcA-sH-zIA" secondAttribute="bottom" id="XQZ-As-8IQ"/>
                             <constraint firstItem="VeK-3G-AiY" firstAttribute="leading" secondItem="602-zb-6KU" secondAttribute="trailing" id="bFz-86-ndh"/>
-                            <constraint firstItem="5vf-w5-OX0" firstAttribute="top" secondItem="GcA-sH-zIA" secondAttribute="top" id="cBE-Ma-XY3"/>
+                            <constraint firstItem="yH1-kc-jsw" firstAttribute="top" secondItem="5vf-w5-OX0" secondAttribute="bottom" constant="7.3300000000000001" id="eez-5j-oiY"/>
                             <constraint firstItem="602-zb-6KU" firstAttribute="leading" secondItem="GcA-sH-zIA" secondAttribute="leading" constant="16" id="hNN-lr-Ie3"/>
-                            <constraint firstItem="GcA-sH-zIA" firstAttribute="bottom" secondItem="i9c-jt-p3K" secondAttribute="bottom" constant="4" id="hvS-6p-nyN"/>
-                            <constraint firstItem="BSx-gA-OyQ" firstAttribute="top" secondItem="yH1-kc-jsw" secondAttribute="bottom" constant="7.3300000000000001" id="jbf-uO-ZND"/>
-                            <constraint firstItem="6Md-PP-OPU" firstAttribute="leading" secondItem="GcA-sH-zIA" secondAttribute="leading" constant="16" id="jon-lh-Qy7"/>
-                            <constraint firstItem="yH1-kc-jsw" firstAttribute="leading" secondItem="GcA-sH-zIA" secondAttribute="leading" constant="16" id="li6-8E-WQP"/>
-                            <constraint firstItem="6Md-PP-OPU" firstAttribute="top" secondItem="602-zb-6KU" secondAttribute="bottom" id="n92-XB-uJ8"/>
-                            <constraint firstItem="GcA-sH-zIA" firstAttribute="trailing" secondItem="6Md-PP-OPU" secondAttribute="trailing" constant="16" id="nBI-5S-0In"/>
-                            <constraint firstItem="5vf-w5-OX0" firstAttribute="leading" secondItem="GcA-sH-zIA" secondAttribute="leading" constant="16" id="q7V-hy-wty"/>
+                            <constraint firstItem="6Md-PP-OPU" firstAttribute="top" secondItem="602-zb-6KU" secondAttribute="bottom" id="hU2-Yw-QMO"/>
+                            <constraint firstItem="5vf-w5-OX0" firstAttribute="leading" secondItem="GcA-sH-zIA" secondAttribute="leading" constant="16" id="j7S-95-XJg"/>
+                            <constraint firstItem="BSx-gA-OyQ" firstAttribute="top" secondItem="yH1-kc-jsw" secondAttribute="bottom" constant="7" id="mHT-4S-Foj"/>
+                            <constraint firstItem="yH1-kc-jsw" firstAttribute="leading" secondItem="GcA-sH-zIA" secondAttribute="leading" constant="16" id="uM7-BU-YVE"/>
                             <constraint firstItem="GcA-sH-zIA" firstAttribute="trailing" secondItem="BSx-gA-OyQ" secondAttribute="trailing" constant="16" id="vED-Vh-u6h"/>
                             <constraint firstItem="GcA-sH-zIA" firstAttribute="trailing" secondItem="VeK-3G-AiY" secondAttribute="trailing" constant="13.33" id="yLX-66-jbY"/>
                         </constraints>
@@ -1095,7 +1077,6 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                         <outlet property="adventureImage" destination="N4l-kZ-E2S" id="AMv-QU-m9w"/>
                         <outlet property="beachImage" destination="Agz-Gj-jtd" id="JME-dv-Hi4"/>
                         <outlet property="beachesLabel" destination="9XV-RF-pc8" id="0Fl-Pn-xRz"/>
-                        <outlet property="createTripButton" destination="i9c-jt-p3K" id="TTg-so-dbD"/>
                         <outlet property="insightsCollectionView" destination="6Md-PP-OPU" id="qB4-1M-ziq"/>
                         <outlet property="insightsSearchBar" destination="602-zb-6KU" id="IxX-hv-WWs"/>
                         <outlet property="monImage" destination="mTr-6q-GwR" id="Rwm-Nr-c7G"/>
@@ -1504,6 +1485,31 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nhy-up-OiX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3333.5877862595416" y="1419.7183098591549"/>
+        </scene>
+        <!--Manual2 View Controller-->
+        <scene sceneID="ytk-vf-lfo">
+            <objects>
+                <viewController id="ciE-Hl-9Mm" customClass="Manual2ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3zb-Rx-ZkU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGh-VY-Ma4">
+                                <rect key="frame" x="0.0" y="59" width="351" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ciE-Hl-9Mm" id="cfY-vI-4JK"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kUH-pj-2yq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5L-Je-K7u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4590.0763358778622" y="1576.7605633802818"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lk2-lD-S1e">
@@ -2470,21 +2476,32 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="204"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8AB-oN-HXv">
-                                                    <rect key="frame" x="16" y="151" width="37.5" height="18"/>
+                                                    <rect key="frame" x="16.000000000000004" y="151" width="41.333333333333343" height="20.333333333333343"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAA-yt-XIH">
+                                                    <rect key="frame" x="8" y="151" width="140" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="wAA-yt-XIH" secondAttribute="bottom" constant="33" id="17n-AU-DIm"/>
                                                 <constraint firstItem="D8W-hh-Ibb" firstAttribute="leading" secondItem="TkH-1T-BiC" secondAttribute="leading" id="7Qh-LE-io6"/>
+                                                <constraint firstItem="wAA-yt-XIH" firstAttribute="leading" secondItem="TkH-1T-BiC" secondAttribute="leading" constant="8" id="FcH-lK-EyG"/>
+                                                <constraint firstItem="wAA-yt-XIH" firstAttribute="top" secondItem="TkH-1T-BiC" secondAttribute="top" constant="151" id="nhr-W5-Fxq"/>
                                                 <constraint firstAttribute="trailing" secondItem="D8W-hh-Ibb" secondAttribute="trailing" id="prW-oI-nJf"/>
                                                 <constraint firstAttribute="bottom" secondItem="D8W-hh-Ibb" secondAttribute="bottom" id="uyP-os-8Ni"/>
                                                 <constraint firstItem="D8W-hh-Ibb" firstAttribute="top" secondItem="TkH-1T-BiC" secondAttribute="top" id="xvY-6q-Ldi"/>
+                                                <constraint firstAttribute="trailing" secondItem="wAA-yt-XIH" secondAttribute="trailing" constant="12" id="zA0-Xq-GmT"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="160" height="204"/>
                                         <connections>
                                             <outlet property="cellImageView" destination="D8W-hh-Ibb" id="8zM-7S-9aI"/>
-                                            <segue destination="SDw-hy-pzu" kind="show" id="o4H-FZ-rxe"/>
+                                            <outlet property="cellTitleLbl" destination="wAA-yt-XIH" id="WX2-PT-xYq"/>
+                                            <segue destination="Kdd-iL-AqP" kind="show" id="c8a-14-umw"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="PortraitCollectionViewCell" id="BW8-IJ-2UR" customClass="PortraitCollectionViewCell" customModule="RaahiShrey4" customModuleProvider="target">
@@ -2603,7 +2620,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOf-GF-Rfq">
-                                <rect key="frame" x="16" y="103" width="89.666666666666671" height="32"/>
+                                <rect key="frame" x="16" y="103" width="89.333333333333329" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="ban-Ty-gpB"/>
                                 </constraints>
@@ -2614,7 +2631,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GD-KE-RRI">
-                                <rect key="frame" x="338" y="103" width="50" height="34.333333333333343"/>
+                                <rect key="frame" x="337.66666666666669" y="103" width="50.333333333333314" height="34.333333333333343"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="person.crop.circle" catalog="system" title=""/>
                                 <connections>
@@ -2622,7 +2639,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9h-bh-P8x">
-                                <rect key="frame" x="298" y="103" width="45" height="35"/>
+                                <rect key="frame" x="297.66666666666669" y="103" width="45.333333333333314" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="gearshape.fill" catalog="system" title=""/>
                                 <connections>
@@ -2923,33 +2940,6 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                                     <rect key="frame" x="20" y="220" width="122" height="78"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JoG-mq-vWw">
-                                                    <rect key="frame" x="333" y="87" width="47" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="gray" image="plus" catalog="system" title=""/>
-                                                    <connections>
-                                                        <action selector="addItinerary1:" destination="ldk-RP-WtZ" eventType="touchUpInside" id="AvS-qo-Rev"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUa-w6-auJ">
-                                                    <rect key="frame" x="333" y="176" width="47" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="gray" image="plus" catalog="system" title=""/>
-                                                    <connections>
-                                                        <action selector="addItinerary2:" destination="ldk-RP-WtZ" eventType="touchUpInside" id="TOJ-ql-fne"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goz-Yr-jgK">
-                                                    <rect key="frame" x="333" y="264" width="47" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="gray" image="plus" catalog="system" title=""/>
-                                                    <connections>
-                                                        <action selector="addItinerary3:" destination="ldk-RP-WtZ" eventType="touchUpInside" id="JJb-vi-dbw"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -2985,16 +2975,16 @@ Local Craft and Art Festivals (Nov-Mar)</string>
         <scene sceneID="pxL-iZ-32O">
             <objects>
                 <viewController id="SBL-mG-TWB" customClass="ManualItinerarySelectionViewController4" customModule="RaahiShrey4" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Ypy-X0-izn">
+                    <view key="view" contentMode="scaleToFill" id="Ypy-X0-izn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" id="sXu-El-1ZY">
+                            <view contentMode="scaleToFill" id="sXu-El-1ZY">
                                 <rect key="frame" x="0.0" y="11" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vli-KA-Lf3">
-                                        <rect key="frame" x="0.0" y="143" width="393" height="574"/>
+                                        <rect key="frame" x="0.0" y="109" width="393" height="574"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="574" id="aQp-ca-JTc"/>
@@ -3061,7 +3051,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                             <segue destination="lhq-zL-I9l" kind="push" identifier="aibaseSegue" id="iO7-UL-fp9"/>
                                         </connections>
                                     </button>
-                                    <searchBar contentMode="redraw" misplaced="YES" barStyle="blackTranslucent" searchBarStyle="minimal" text="" placeholder="Select destination" translatesAutoresizingMaskIntoConstraints="NO" id="uWH-Zg-fMf">
+                                    <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" barStyle="blackTranslucent" searchBarStyle="minimal" text="" placeholder="Select destination" translatesAutoresizingMaskIntoConstraints="NO" id="uWH-Zg-fMf">
                                         <rect key="frame" x="8" y="72" width="320" height="56"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3070,8 +3060,8 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                             <outlet property="delegate" destination="SBL-mG-TWB" id="iXp-MN-wWC"/>
                                         </connections>
                                     </searchBar>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="c2x-X9-j7u">
-                                        <rect key="frame" x="0.0" y="143" width="393" height="574"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="c2x-X9-j7u">
+                                        <rect key="frame" x="0.0" y="256" width="393" height="574"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="574" id="0Qd-3z-NlN"/>
@@ -3141,6 +3131,11 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                     <constraint firstItem="7bp-eM-TBl" firstAttribute="leading" secondItem="itl-wi-d5g" secondAttribute="leading" constant="16" id="vfx-Hb-Vnq"/>
                                     <constraint firstItem="c2x-X9-j7u" firstAttribute="leading" secondItem="itl-wi-d5g" secondAttribute="leading" id="zfn-wB-hiu"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="7bp-eM-TBl"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WId-yA-FGh"/>
@@ -3579,39 +3574,30 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKR-np-h96">
-                                                    <rect key="frame" x="324" y="85" width="63" height="34.333333333333329"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" title="Book"/>
-                                                    <connections>
-                                                        <action selector="Btn_URL:" destination="Qxd-Lg-lcp" eventType="touchUpInside" id="uIB-Sh-9br"/>
-                                                    </connections>
-                                                </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DDt-3q-S16">
-                                                    <rect key="frame" x="158" y="69" width="38.333333333333343" height="62.333333333333343"/>
+                                                    <rect key="frame" x="158" y="69" width="36" height="62.333333333333343"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ok-Ld-PSs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="38.333333333333336" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="36" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="EXp-Lr-yav"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                             <color key="textColor" red="0.2853441994" green="0.2853441994" blue="0.2853441994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33P-iK-w5U">
-                                                            <rect key="frame" x="0.0" y="26" width="38.333333333333336" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                            <rect key="frame" x="0.0" y="26" width="36" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                             <color key="textColor" red="0.32742699580000001" green="0.32742699580000001" blue="0.32742699580000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zY-eu-EA2">
-                                                            <rect key="frame" x="0.0" y="49" width="38.333333333333336" height="13.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="49" width="36" height="13.333333333333336"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="13.333333333333336" id="e4E-Tt-Bw7"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                             <color key="textColor" red="0.34327348419999998" green="0.34327348419999998" blue="0.34327348419999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3621,6 +3607,15 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                                         <constraint firstAttribute="trailing" secondItem="33P-iK-w5U" secondAttribute="trailing" id="eNk-ot-7sn"/>
                                                     </constraints>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKR-np-h96">
+                                                    <rect key="frame" x="330" y="89" width="57" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="Visit"/>
+                                                    <connections>
+                                                        <action selector="Btn_URL:" destination="Qxd-Lg-lcp" eventType="touchUpInside" id="uIB-Sh-9br"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="f0X-FB-cxc" secondAttribute="bottom" constant="12" id="FTw-Jf-EAG"/>
@@ -3727,10 +3722,10 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shC-zC-xae">
-                                                    <rect key="frame" x="324" y="89" width="63" height="34.333333333333343"/>
+                                                    <rect key="frame" x="327" y="89" width="57" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" title="Book"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="Visit"/>
                                                     <connections>
                                                         <action selector="Btn_URL2:" destination="ZIX-JK-b9e" eventType="touchUpInside" id="88C-2i-3AF"/>
                                                     </connections>
@@ -4187,7 +4182,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vch-aP-1Gp">
                                                     <rect key="frame" x="312" y="100" width="66" height="35"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" title="Book"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="Visit"/>
                                                     <connections>
                                                         <action selector="Btn_URL3:" destination="vLW-7S-BOe" eventType="touchUpInside" id="H0a-bS-QxE"/>
                                                     </connections>
@@ -4301,10 +4296,10 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZt-Cn-yBT">
-                                                    <rect key="frame" x="324" y="89" width="63" height="34.333333333333343"/>
+                                                    <rect key="frame" x="327" y="89" width="57" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" title="Book"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="Visit"/>
                                                     <connections>
                                                         <action selector="Btn_URL4:" destination="dxB-Bp-A9S" eventType="touchUpInside" id="tZz-GD-bWe"/>
                                                     </connections>
@@ -4438,23 +4433,23 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                                         <constraint firstAttribute="width" constant="130" id="evn-MJ-vcl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NZ-fT-KI7">
-                                                    <rect key="frame" x="150" y="10.999999999999998" width="75.333333333333314" height="25.333333333333329"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label31" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NZ-fT-KI7">
+                                                    <rect key="frame" x="150" y="10.999999999999998" width="234" height="25.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zu3-2X-4wK">
-                                                    <rect key="frame" x="324" y="89" width="63" height="34.333333333333343"/>
+                                                    <rect key="frame" x="327" y="89" width="57" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" title="Book"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="Visit"/>
                                                     <connections>
                                                         <action selector="Btn_URL5:" destination="Y4c-Qa-Zab" eventType="touchUpInside" id="nFo-ah-UkV"/>
                                                     </connections>
                                                 </button>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="30F-I8-eJX">
-                                                    <rect key="frame" x="150" y="65" width="57.333333333333343" height="65"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="30F-I8-eJX">
+                                                    <rect key="frame" x="150" y="65.333333333333329" width="57.333333333333343" height="64.999999999999986"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ta-2y-rZg">
                                                             <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="21"/>
@@ -4488,15 +4483,15 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="30F-I8-eJX" firstAttribute="top" secondItem="3NZ-fT-KI7" secondAttribute="bottom" constant="18.666666666666664" id="2L7-wa-CmJ"/>
-                                                <constraint firstItem="30F-I8-eJX" firstAttribute="leading" secondItem="3NZ-fT-KI7" secondAttribute="leading" id="9dB-Bf-TyM"/>
                                                 <constraint firstItem="DJw-yy-Clm" firstAttribute="leading" secondItem="aWd-nc-rDF" secondAttribute="leading" constant="12" id="BUg-Zj-des"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3NZ-fT-KI7" secondAttribute="trailing" constant="20" symbolic="YES" id="CXn-1k-J7e"/>
                                                 <constraint firstAttribute="bottom" secondItem="DJw-yy-Clm" secondAttribute="bottom" constant="12" id="NAB-Ag-NxJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="DJw-yy-Clm" secondAttribute="bottom" constant="12" id="Taa-zz-6xg"/>
-                                                <constraint firstItem="3NZ-fT-KI7" firstAttribute="top" secondItem="aWd-nc-rDF" secondAttribute="topMargin" id="VQD-g8-KhL"/>
                                                 <constraint firstItem="30F-I8-eJX" firstAttribute="leading" secondItem="DJw-yy-Clm" secondAttribute="trailing" constant="8" symbolic="YES" id="d3m-ER-pYn"/>
                                                 <constraint firstItem="DJw-yy-Clm" firstAttribute="top" secondItem="aWd-nc-rDF" secondAttribute="top" constant="12" id="fJ5-9o-3nB"/>
+                                                <constraint firstAttribute="trailing" secondItem="3NZ-fT-KI7" secondAttribute="trailing" constant="9" id="fSS-Qb-ohR"/>
+                                                <constraint firstItem="3NZ-fT-KI7" firstAttribute="top" secondItem="aWd-nc-rDF" secondAttribute="top" constant="11" id="gkp-TQ-OWB"/>
+                                                <constraint firstItem="30F-I8-eJX" firstAttribute="top" secondItem="3NZ-fT-KI7" secondAttribute="bottom" constant="29" id="igY-TG-Jdo"/>
+                                                <constraint firstItem="3NZ-fT-KI7" firstAttribute="leading" secondItem="DJw-yy-Clm" secondAttribute="trailing" constant="8" symbolic="YES" id="xIR-z8-VCI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -4528,7 +4523,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsG-fg-5ZN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8503" y="2872"/>
+            <point key="canvasLocation" x="8501.5267175572517" y="2871.8309859154929"/>
         </scene>
         <!--Web View Controller5-->
         <scene sceneID="J9a-RU-2PX">
@@ -4804,7 +4799,7 @@ Local Craft and Art Festivals (Nov-Mar)</string>
                                 <rect key="frame" x="0.0" y="-17" width="393" height="886"/>
                             </imageView>
                             <view alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eU-0h-047">
-                                <rect key="frame" x="0.0" y="734" width="393" height="118"/>
+                                <rect key="frame" x="0.0" y="690" width="393" height="162"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6a0-ZK-kOT">
                                         <rect key="frame" x="298" y="15" width="87" height="35"/>
@@ -4931,13 +4926,189 @@ Local Craft and Art Festivals (Nov-Mar)</string>
             </objects>
             <point key="canvasLocation" x="631" y="-656"/>
         </scene>
+        <!--Show Post View Controller-->
+        <scene sceneID="HAK-dY-VHK">
+            <objects>
+                <viewController id="lzF-fH-IMv" customClass="ShowPostViewController" customModule="RaahiShrey4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U6B-WC-ekW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image 11" translatesAutoresizingMaskIntoConstraints="NO" id="XE8-Qk-HwR">
+                                <rect key="frame" x="16" y="114" width="60" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="shreya_aggarwal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fal-pb-JBU">
+                                <rect key="frame" x="84" y="132" width="136" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chennai 11" translatesAutoresizingMaskIntoConstraints="NO" id="X1T-QO-jdL">
+                                <rect key="frame" x="16" y="200" width="361" height="337"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Chennai, Tamil Nadu" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6k8-HA-P9b">
+                                <rect key="frame" x="16" y="575" width="192" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sz-6J-4u7">
+                                <rect key="frame" x="16" y="626" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Chilling" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k9p-o2-Wxo">
+                                <rect key="frame" x="16" y="649" width="351" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI9-c8-9oq">
+                                <rect key="frame" x="16" y="555" width="33" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Experience" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA3-Dl-4p8">
+                                <rect key="frame" x="16" y="702" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Refreshing" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p2D-gc-QrH">
+                                <rect key="frame" x="16" y="725" width="253" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hWL-C6-PEv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JUt-Rv-30J"/>
+                    <connections>
+                        <outlet property="caption" destination="0Sz-6J-4u7" id="mG9-QA-GSB"/>
+                        <outlet property="captionFetch" destination="k9p-o2-Wxo" id="Itn-x0-JVb"/>
+                        <outlet property="city" destination="zI9-c8-9oq" id="Pgy-L3-j7d"/>
+                        <outlet property="cityFetch" destination="6k8-HA-P9b" id="uTr-mM-6es"/>
+                        <outlet property="exp" destination="kA3-Dl-4p8" id="xnF-hF-fdb"/>
+                        <outlet property="expFetch" destination="p2D-gc-QrH" id="4Sl-Aa-DIV"/>
+                        <outlet property="image" destination="XE8-Qk-HwR" id="wJE-Ju-6iN"/>
+                        <outlet property="name" destination="Fal-pb-JBU" id="OLJ-bS-yd9"/>
+                        <outlet property="post1" destination="X1T-QO-jdL" id="TVC-wz-ynK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L03-ST-nKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3334" y="-178"/>
+        </scene>
+        <!--Trendingz View Controller-->
+        <scene sceneID="Gbr-6A-aWE">
+            <objects>
+                <viewController storyboardIdentifier="Trendingzvc" id="Kdd-iL-AqP" customClass="TrendingzViewController" customModule="RaahiShrey4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LAL-Hj-xM1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hampi 2" translatesAutoresizingMaskIntoConstraints="NO" id="MhK-Kk-alM">
+                                <rect key="frame" x="16" y="113" width="361" height="277"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="keyPath"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C0s-ZB-3IJ">
+                                <rect key="frame" x="16" y="451" width="361" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Hampi, a UNESCO site in Karnataka, is famed for its ancient ruins, stunning temples, and boulder-strewn landscapes. Once the Vijayanagara Empire’s capital, it boasts the Virupaksha Temple, Vittala Temple, and the stone chariot. A must-visit for history lovers!</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeE-cP-ZF6">
+                                <rect key="frame" x="16" y="662" width="167" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Mountain biking"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8W-Iy-ZU2">
+                                <rect key="frame" x="191" y="662" width="178" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Whitewater rafting"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcz-Ze-xIN">
+                                <rect key="frame" x="16" y="713" width="93" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Camping"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keC-iH-qJh">
+                                <rect key="frame" x="117" y="713" width="95" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Cycling"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1Z-Uf-hhU">
+                                <rect key="frame" x="220" y="713" width="149" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Temple Hopping"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trending Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iE9-4K-PBv">
+                                <rect key="frame" x="16" y="609" width="212" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mx9-Pc-o2a">
+                                <rect key="frame" x="16" y="416" width="64" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EAO-VL-1e2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xpu-0s-DgT"/>
+                    <connections>
+                        <outlet property="aboutTrendz" destination="Mx9-Pc-o2a" id="91T-eq-zQ7"/>
+                        <outlet property="activitiesTrendz" destination="iE9-4K-PBv" id="Prb-j7-VIa"/>
+                        <outlet property="button1" destination="MeE-cP-ZF6" id="Ie2-OU-gSh"/>
+                        <outlet property="button2" destination="p8W-Iy-ZU2" id="vY3-xe-iE3"/>
+                        <outlet property="button3" destination="Vcz-Ze-xIN" id="jMS-LQ-61p"/>
+                        <outlet property="button4" destination="keC-iH-qJh" id="VIl-jD-Rhn"/>
+                        <outlet property="button5" destination="L1Z-Uf-hhU" id="Qbi-kV-caH"/>
+                        <outlet property="descTrendz" destination="C0s-ZB-3IJ" id="0aR-Oe-KdG"/>
+                        <outlet property="imageTrendz" destination="MhK-Kk-alM" id="ubH-cq-xlR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7t-Jc-lpL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6103.0534351145034" y="369.71830985915494"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="U1x-QG-A33"/>
-        <segue reference="o4H-FZ-rxe"/>
-        <segue reference="IIu-OJ-dIB"/>
-        <segue reference="6fZ-WF-AWV"/>
-        <segue reference="I2Y-gQ-vvG"/>
+        <segue reference="hOL-Ho-KUD"/>
+        <segue reference="iO7-UL-fp9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AI4" width="735" height="414"/>
@@ -4947,11 +5118,13 @@ Local Craft and Art Festivals (Nov-Mar)</string>
         <image name="Image 6" width="430" height="932"/>
         <image name="apple-photos (2)" width="256" height="256"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
+        <image name="chennai 11" width="1280" height="720"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="find" width="512" height="512"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="globe.europe.africa.fill" width="20" height="20"/>
         <image name="globe.europe.africa.fill 1" width="20" height="20"/>
+        <image name="hampi 2" width="3000" height="2000"/>
         <image name="image 470" width="120" height="120"/>
         <image name="image 471" width="120" height="120"/>
         <image name="image 472" width="120" height="120"/>
