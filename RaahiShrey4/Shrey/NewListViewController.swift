@@ -25,24 +25,7 @@ class NewListViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "NewListCell")
         
         states = JSONLoader.loadCities()
-
-        // Optionally, fetch cities from Firebase to override or merge data
-//        fetchCitiesFromFirebase()
     }
-
-//    private func fetchCitiesFromFirebase() {
-//        firebaseManager.fetchCities { [weak self] result in
-//            DispatchQueue.main.async {
-//                switch result {
-//                case .success(let fetchedCities):
-//                    self?.states = fetchedCities
-//                    self?.tableView.reloadData()
-//                case .failure(let error):
-//                    print("Error fetching cities: \(error.localizedDescription)")
-//                }
-//            }
-//        }
-//    }
 }
 
 extension NewListViewController: UITableViewDataSource, UITableViewDelegate {

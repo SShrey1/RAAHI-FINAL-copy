@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import UIKit
+
+class Manual2ViewController : UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+}

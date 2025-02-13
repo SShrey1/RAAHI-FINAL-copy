@@ -56,33 +56,7 @@ class FirebaseManager {
         }
     }
     
-//    func fetchManualItinerary(for city: String, completion: @escaping (Result<[manualItineraryList], Error>) -> Void) {
-//            let insightsRef = databaseRef.child("manualItinerary").child(city)
-//
-//            insightsRef.observeSingleEvent(of: .value) { snapshot in
-//                guard let insightsDict = snapshot.value as? [String: [String: Any]] else {
-//                    completion(.success([]))
-//                    return
-//                }
-//                
-//                var itinerary: [manualItineraryList] = []
-//                for (_, value) in insightsDict {
-//                    if let title4 = value["title"] as? String,
-//                       let title5 = value["type"] as? String,
-//                       let title6 = value["price"] as? String,
-//                       let image4 = value["imageURL"] as? String,  // Ensure Firebase stores the image URL
-//                       let city = value["city"] as? String {
-//                        
-//                        itinerary.append(manualItineraryList(title4: title4, title5: title5, title6: title6, image4: image4, city: city))
-//                    }
-//                }
-//                
-//                completion(.success(itinerary))
-//            } withCancel: { error in
-//                completion(.failure(error))
-//            }
-//        }
-    
+
     
     func fetchInsights(for city: String, completion: @escaping (Result<[Insite], Error>) -> Void) {
             let insightsRef = databaseRef.child("insights").child(city)
