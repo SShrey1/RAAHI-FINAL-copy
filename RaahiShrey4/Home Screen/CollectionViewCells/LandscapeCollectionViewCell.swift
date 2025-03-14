@@ -6,7 +6,7 @@ final class LandscapeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellTitleLbl: UILabel!
     
     
-    func setup(_ item: ListItem) {
+    func setup(_ item: ListItem3) {
             // Set the image and title
             cellImageView.image = UIImage(named: item.image)
             cellTitleLbl.text = item.title

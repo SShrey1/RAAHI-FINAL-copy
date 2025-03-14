@@ -9,11 +9,6 @@ import Foundation
 import Firebase
 import FirebaseStorage
 
-struct StateList: Codable {
-    let id: String
-    let title: String
-}
-
 class FirebaseManager {
     
     // Singleton instance
@@ -23,7 +18,7 @@ class FirebaseManager {
     private let storageRef = Storage.storage().reference()
     
     private init() {}
-
+    
     // MARK: - Fetch Trending Images
     func fetchImageURLs(completion: @escaping ([String]) -> Void) {
         let trendingRef = storageRef.child("trendingHome")
@@ -162,3 +157,26 @@ class FirebaseManager {
         }
     }
 }
+
+//    func fetchAdventureItems(completion: @escaping ([ListItem]) -> Void) {
+//        let adventureRef = Database.database().reference().child("adventure") // Correct reference
+//
+//        adventureRef.observeSingleEvent(of: .value) { snapshot in
+//            guard let itemsDict = snapshot.value as? [String: [String: Any]] else {
+//                print("❌ No adventure items found")
+//                completion([])
+//                return
+//            }
+//
+//            let items = itemsDict.compactMap { key, value -> ListItem? in
+//                guard let title = value["title"] as? String,
+//                      let image = value["image"] as? String else { return nil }
+//                return ListItem(title: title, image: image)
+//            }
+//
+//            completion(items)
+//        } withCancel: { error in
+//            print("❌ Error fetching adventure items: \(error.localizedDescription)")
+//            completion([])
+//        }
+//    }

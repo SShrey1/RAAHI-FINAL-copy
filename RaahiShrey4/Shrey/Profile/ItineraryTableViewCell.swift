@@ -6,20 +6,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ItineraryTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var itineraryImageView: UIImageView!
-    
     @IBOutlet weak var itineraryTitleLabel: UILabel!
-    
     @IBOutlet weak var itineraryTypeLabel: UILabel!
-    
     @IBOutlet weak var itineraryStatusLabel: UILabel!
-    
     @IBOutlet weak var arrowImageView: UIImageView!
-    
     @IBOutlet weak var itinerayCardView: UIView!
     
 
@@ -45,3 +41,26 @@ class ItineraryTableViewCell: UITableViewCell {
     }
 
 }
+
+
+//    override func awakeFromNib() {
+//            super.awakeFromNib()
+//            print("ItineraryTableViewCell awakeFromNib called")
+//            itinerayCardView.layer.cornerRadius = 10
+//            itinerayCardView.layer.shadowColor = UIColor.systemGray.cgColor
+//            itinerayCardView.layer.shadowOpacity = 0.2
+//            itinerayCardView.layer.shadowOffset = CGSize(width: 0, height: 2)
+//            itinerayCardView.layer.shadowRadius = 4
+//            
+//            itineraryImageView.layer.cornerRadius = 10
+//            itineraryImageView.clipsToBounds = true
+//            
+//            itineraryTitleLabel.font = .systemFont(ofSize: 16, weight: .bold)
+//            itineraryTypeLabel.font = .systemFont(ofSize: 12)
+//        }
+//        
+//        override func setSelected(_ selected: Bool, animated: Bool) {
+//            super.setSelected(selected, animated: animated)
+//            print("ItineraryTableViewCell setSelected called: \(selected)")
+//        }
+//    }
