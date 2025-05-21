@@ -287,18 +287,19 @@ struct MockData {
     // ✅ Remove hardcoded adventure items, initialize as empty
     private var adventure: ListSection = .adventure([])
 
-    private let diary: ListSection = {
-        .diary([
-            ListItem3(title: "West Bengal", image: "28"),
-            ListItem3(title: "Goa", image: "14"),
-            ListItem3(title: "Himachal Pradesh", image: "15"),
-            ListItem3(title: "Madhya Pradesh", image: "16"),
-            ListItem3(title: "Odisha", image: "17"),
-            ListItem3(title: "Jammu & Kashmir", image: "18"),
-            ListItem3(title: "Rajasthan", image: "19"),
-            ListItem3(title: "Karnataka", image: "20")
-        ])
-    }()
+    private let diary: ListSection = .diary([])
+//    {
+        
+//            ListItem3(title: "West Bengal", image: "28"),
+//            ListItem3(title: "Goa", image: "14"),
+//            ListItem3(title: "Himachal Pradesh", image: "15"),
+//            ListItem3(title: "Madhya Pradesh", image: "16"),
+//            ListItem3(title: "Odisha", image: "17"),
+//            ListItem3(title: "Jammu & Kashmir", image: "18"),
+//            ListItem3(title: "Rajasthan", image: "19"),
+//            ListItem3(title: "Karnataka", image: "20")
+//        ])
+//    }()
 
     var pageData: [ListSection] {
         [trending, adventure, diary]  // ✅ Trending & Adventure sections are now empty initially

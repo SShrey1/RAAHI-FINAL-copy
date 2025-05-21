@@ -1,17 +1,20 @@
+
 import UIKit
 import FirebaseFirestore
 
 class Post2DetailViewController: UIViewController {
     
     let post: Post
+    let db = Firestore.firestore()
     
     let scrollView = UIScrollView()
     let contentView = UIView()
     let imageCarousel = UIScrollView()
     let pageControl = UIPageControl()
-    let rightArrow = UIButton()  // Right arrow for carousel
+    let rightArrow = UIButton()
     
-    private var headerView: UIView?  // Reference to the header view
+    private var headerView: UIView?
+    private var itineraryContainer: UIView?
     
     init(post: Post) {
         self.post = post
@@ -22,10 +25,13 @@ class Post2DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupUI()
         
-        // Observe profile image updates
+        if let itineraryID = post.itineraryID {
+            fetchItinerary(itineraryID: itineraryID)
+        }
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(handleProfileImageUpdate),
@@ -35,34 +41,26 @@ class Post2DetailViewController: UIViewController {
     }
     
     deinit {
-        // Remove observer when the view controller is deallocated
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name("ProfileImageUpdated"), object: nil)
     }
     
-    // MARK: - Handle Profile Image Update
     @objc private func handleProfileImageUpdate(notification: Notification) {
         if let imageData = notification.userInfo?["imageData"] as? Data,
-           let profileImage = UIImage(data: imageData) {
-            // Update the profile image in the header view
-            if let headerView = self.headerView {
-                if let profileImageView = headerView.subviews.first(where: { $0 is UIImageView }) as? UIImageView {
-                    profileImageView.image = profileImage
-                }
-            }
+           let profileImage = UIImage(data: imageData),
+           let headerView = self.headerView,
+           let profileImageView = headerView.subviews.first(where: { $0 is UIImageView }) as? UIImageView {
+            profileImageView.image = profileImage
         }
     }
     
     // MARK: - Setup UI
     func setupUI() {
-        // Add scrollView
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
         
-        // Add contentView
         contentView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(contentView)
         
-        // Constraints for scrollView and contentView
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -76,21 +74,17 @@ class Post2DetailViewController: UIViewController {
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
         
-        // Add header (profile picture, username, options button)
         let headerView = createHeaderView()
         contentView.addSubview(headerView)
         
-        // Add image carousel
         setupImageCarousel()
         contentView.addSubview(imageCarousel)
         contentView.addSubview(pageControl)
         contentView.addSubview(rightArrow)
         
-        // Add post details (city, date, experience)
         let detailsStackView = createDetailsStackView()
         contentView.addSubview(detailsStackView)
         
-        // Constraints
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             headerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
@@ -121,44 +115,33 @@ class Post2DetailViewController: UIViewController {
     private func createHeaderView() -> UIView {
         let headerView = UIView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
-        self.headerView = headerView  // Keep a reference
+        self.headerView = headerView
         
-        // Profile picture
         let profileImageView = UIImageView()
-        
-        // Load profile image from UserDefaults
         if let imageData = UserDefaults.standard.data(forKey: "profileImage"),
            let profileImage = UIImage(data: imageData) {
             profileImageView.image = profileImage
         } else {
-            profileImageView.image = UIImage(named: "profile_placeholder")  // Default placeholder image
+            profileImageView.image = UIImage(named: "profile_placeholder")
         }
-        
         profileImageView.layer.cornerRadius = 15
         profileImageView.clipsToBounds = true
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(profileImageView)
         
-        // Username (fetched from UserDefaults)
         let usernameLabel = UILabel()
-        if let savedName = UserDefaults.standard.string(forKey: "UserName") {
-            usernameLabel.text = savedName
-        } else {
-            usernameLabel.text = "Username"  // Default value
-        }
-        usernameLabel.font = UIFont.boldSystemFont(ofSize: 18)  // Increased font size
+        usernameLabel.text = UserDefaults.standard.string(forKey: "UserName") ?? "Username"
+        usernameLabel.font = .boldSystemFont(ofSize: 18)
         usernameLabel.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(usernameLabel)
         
-        // Options button (three dots)
         let optionsButton = UIButton(type: .system)
         optionsButton.setImage(UIImage(systemName: "ellipsis"), for: .normal)
-        optionsButton.tintColor = .black
+        optionsButton.tintColor = .label
         optionsButton.translatesAutoresizingMaskIntoConstraints = false
         optionsButton.addTarget(self, action: #selector(showDeleteOption), for: .touchUpInside)
         headerView.addSubview(optionsButton)
         
-        // Constraints
         NSLayoutConstraint.activate([
             profileImageView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
             profileImageView.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
@@ -181,34 +164,30 @@ class Post2DetailViewController: UIViewController {
         imageCarousel.isPagingEnabled = true
         imageCarousel.showsHorizontalScrollIndicator = false
         
-        // Add images to carousel
         for (index, imageURL) in post.imageURLs.enumerated() {
             if let url = URL(string: imageURL) {
                 let imageView = UIImageView()
                 imageView.contentMode = .scaleAspectFill
                 imageView.clipsToBounds = true
-                imageView.loadImage1(from: url)  // Use the loadImage method
+                imageView.loadImage1(from: url)
                 imageView.frame = CGRect(x: CGFloat(index) * view.frame.width, y: 0, width: view.frame.width, height: 300)
                 imageCarousel.addSubview(imageView)
             }
         }
         
-        // Set content size
         imageCarousel.contentSize = CGSize(width: view.frame.width * CGFloat(post.imageURLs.count), height: 300)
         
-        // Configure page control
         pageControl.numberOfPages = post.imageURLs.count
         pageControl.currentPage = 0
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         
-        // Configure right arrow
         rightArrow.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         rightArrow.tintColor = .white
         rightArrow.backgroundColor = .black.withAlphaComponent(0.5)
         rightArrow.layer.cornerRadius = 15
         rightArrow.translatesAutoresizingMaskIntoConstraints = false
         rightArrow.addTarget(self, action: #selector(showNextImage), for: .touchUpInside)
-        rightArrow.isHidden = post.imageURLs.count <= 1  // Hide if there's only one image
+        rightArrow.isHidden = post.imageURLs.count <= 1
     }
     
     @objc private func showNextImage() {
@@ -216,36 +195,213 @@ class Post2DetailViewController: UIViewController {
         let offset = CGFloat(nextPage) * view.frame.width
         imageCarousel.setContentOffset(CGPoint(x: offset, y: 0), animated: true)
         pageControl.currentPage = nextPage
-        rightArrow.isHidden = nextPage == post.imageURLs.count - 1  // Hide if on the last image
+        rightArrow.isHidden = nextPage == post.imageURLs.count - 1
     }
     
     // MARK: - Details Stack View
     private func createDetailsStackView() -> UIStackView {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 15  // Increased spacing
+        stackView.spacing = 15
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        // City
         let cityLabel = UILabel()
         cityLabel.text = "📍 \(post.city)"
-        cityLabel.font = UIFont.boldSystemFont(ofSize: 18)  // Increased font size
+        cityLabel.font = .boldSystemFont(ofSize: 18)
         stackView.addArrangedSubview(cityLabel)
         
-        // Date
         let dateLabel = UILabel()
         dateLabel.text = "📅 \(post.date)"
-        dateLabel.font = UIFont.systemFont(ofSize: 16)  // Increased font size
+        dateLabel.font = .systemFont(ofSize: 16)
         stackView.addArrangedSubview(dateLabel)
         
-        // Experience
         let experienceLabel = UILabel()
         experienceLabel.text = post.experience
-        experienceLabel.font = UIFont.systemFont(ofSize: 16)  // Increased font size
-        experienceLabel.numberOfLines = 0  // Allow multiple lines
+        experienceLabel.font = .systemFont(ofSize: 16)
+        experienceLabel.numberOfLines = 0
         stackView.addArrangedSubview(experienceLabel)
         
         return stackView
+    }
+    
+    // MARK: - Fetch Itinerary
+    private func fetchItinerary(itineraryID: String) {
+        db.collection("itineraries").document(itineraryID).getDocument { [weak self] snapshot, error in
+            guard let self = self else { return }
+            if let error = error {
+                print("Error fetching itinerary: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let data = snapshot?.data(),
+                  let name = data["name"] as? String,
+                  let itineraryImageURL = data["imageURL"] as? String,
+                  let placeIDs = data["places"] as? [String] else { return }
+            
+            self.fetchPlacesForItinerary(name: name, itineraryImageURL: itineraryImageURL, placeIDs: placeIDs)
+        }
+    }
+    
+    // MARK: - Fetch Places for Itinerary
+    private func fetchPlacesForItinerary(name: String, itineraryImageURL: String, placeIDs: [String]) {
+        var places: [(name: String, imageURL: String)] = []
+        let group = DispatchGroup()
+        
+        for placeID in placeIDs {
+            group.enter()
+            db.collection("places").document(placeID).getDocument { snapshot, error in
+                if let data = snapshot?.data(),
+                   let name = data["name"] as? String,
+                   let imageURL = data["imageURL"] as? String {
+                    places.append((name: name, imageURL: imageURL))
+                }
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            self.displayItinerary(name: name, itineraryImageURL: itineraryImageURL, places: places)
+        }
+    }
+    
+    // MARK: - Display Itinerary
+    private func displayItinerary(name: String, itineraryImageURL: String, places: [(name: String, imageURL: String)]) {
+        // Create container
+        let itineraryContainer = UIView()
+        itineraryContainer.backgroundColor = .white
+        itineraryContainer.layer.cornerRadius = 12
+        itineraryContainer.layer.shadowColor = UIColor.black.cgColor
+        itineraryContainer.layer.shadowOpacity = 0.1
+        itineraryContainer.layer.shadowOffset = CGSize(width: 0, height: 2)
+        itineraryContainer.layer.shadowRadius = 4
+        itineraryContainer.translatesAutoresizingMaskIntoConstraints = false
+        self.itineraryContainer = itineraryContainer
+        
+        // Header
+        let headerStackView = UIStackView()
+        headerStackView.axis = .horizontal
+        headerStackView.spacing = 10
+        headerStackView.alignment = .center
+        headerStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let itineraryImageView = UIImageView()
+        if let url = URL(string: itineraryImageURL) {
+            itineraryImageView.loadImage1(from: url)
+        }
+        itineraryImageView.contentMode = .scaleAspectFill
+        itineraryImageView.clipsToBounds = true
+        itineraryImageView.layer.cornerRadius = 8
+        itineraryImageView.translatesAutoresizingMaskIntoConstraints = false
+        itineraryImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        itineraryImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        let itineraryTitleLabel = UILabel()
+        itineraryTitleLabel.text = "🗺️ \(name)"
+        itineraryTitleLabel.font = .boldSystemFont(ofSize: 18)
+        itineraryTitleLabel.textColor = .label
+        itineraryTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        headerStackView.addArrangedSubview(itineraryImageView)
+        headerStackView.addArrangedSubview(itineraryTitleLabel)
+        
+        // Places Scroll View (Horizontal)
+        let placesScrollView = UIScrollView()
+        placesScrollView.translatesAutoresizingMaskIntoConstraints = false
+        placesScrollView.showsHorizontalScrollIndicator = true
+        
+        let placesStackView = UIStackView()
+        placesStackView.axis = .horizontal
+        placesStackView.spacing = 15
+        placesStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        for (index, place) in places.enumerated() {
+            let placeView = UIView()
+            placeView.translatesAutoresizingMaskIntoConstraints = false
+            
+            let placeImageView = UIImageView()
+            if let url = URL(string: place.imageURL) {
+                placeImageView.loadImage1(from: url)
+            }
+            placeImageView.contentMode = .scaleAspectFill
+            placeImageView.clipsToBounds = true
+            placeImageView.layer.cornerRadius = 8
+            placeImageView.translatesAutoresizingMaskIntoConstraints = false
+            placeImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
+            placeImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+            
+            let placeLabel = UILabel()
+            placeLabel.text = "\(index + 1). \(place.name)"
+            placeLabel.font = .systemFont(ofSize: 16)
+            placeLabel.textColor = .label
+            placeLabel.numberOfLines = 2
+            placeLabel.textAlignment = .center
+            placeLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            let placeStackView = UIStackView()
+            placeStackView.axis = .vertical
+            placeStackView.spacing = 5
+            placeStackView.alignment = .center
+            placeStackView.addArrangedSubview(placeImageView)
+            placeStackView.addArrangedSubview(placeLabel)
+            placeStackView.translatesAutoresizingMaskIntoConstraints = false
+            
+            placeView.addSubview(placeStackView)
+            
+            NSLayoutConstraint.activate([
+                placeStackView.centerXAnchor.constraint(equalTo: placeView.centerXAnchor),
+                placeStackView.centerYAnchor.constraint(equalTo: placeView.centerYAnchor),
+                placeView.widthAnchor.constraint(equalToConstant: 100) // Fixed width for each place
+            ])
+            
+            placesStackView.addArrangedSubview(placeView)
+        }
+        
+        placesScrollView.addSubview(placesStackView)
+        itineraryContainer.addSubview(headerStackView)
+        itineraryContainer.addSubview(placesScrollView)
+        
+        // Add to content view
+        contentView.addSubview(itineraryContainer)
+        
+        // Constraints
+        NSLayoutConstraint.activate([
+            headerStackView.topAnchor.constraint(equalTo: itineraryContainer.topAnchor, constant: 15),
+            headerStackView.leadingAnchor.constraint(equalTo: itineraryContainer.leadingAnchor, constant: 15),
+            headerStackView.trailingAnchor.constraint(equalTo: itineraryContainer.trailingAnchor, constant: -15),
+            
+            placesScrollView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor, constant: 10),
+            placesScrollView.leadingAnchor.constraint(equalTo: itineraryContainer.leadingAnchor, constant: 15),
+            placesScrollView.trailingAnchor.constraint(equalTo: itineraryContainer.trailingAnchor, constant: -15),
+            placesScrollView.bottomAnchor.constraint(equalTo: itineraryContainer.bottomAnchor, constant: -15),
+            placesScrollView.heightAnchor.constraint(equalToConstant: 120), // Adjusted height
+            
+            placesStackView.topAnchor.constraint(equalTo: placesScrollView.topAnchor),
+            placesStackView.leadingAnchor.constraint(equalTo: placesScrollView.leadingAnchor),
+            placesStackView.trailingAnchor.constraint(equalTo: placesScrollView.trailingAnchor),
+            placesStackView.bottomAnchor.constraint(equalTo: placesScrollView.bottomAnchor),
+            placesStackView.heightAnchor.constraint(equalTo: placesScrollView.heightAnchor)
+        ])
+        
+        // Adjust content view constraints
+        if let detailsStackView = contentView.subviews.first(where: { $0 is UIStackView }) as? UIStackView {
+            if let bottomConstraint = contentView.constraints.first(where: { $0.firstItem === detailsStackView && $0.firstAttribute == .bottom }) {
+                contentView.removeConstraint(bottomConstraint)
+            }
+            
+            NSLayoutConstraint.activate([
+                itineraryContainer.topAnchor.constraint(equalTo: detailsStackView.bottomAnchor, constant: 20),
+                itineraryContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+                itineraryContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+                itineraryContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+                
+                detailsStackView.bottomAnchor.constraint(equalTo: itineraryContainer.topAnchor, constant: -20)
+            ])
+        }
+        
+        // Ensure scroll view content size is updated
+        scrollView.contentSize = contentView.systemLayoutSizeFitting(
+            UIView.layoutFittingCompressedSize
+        )
     }
     
     // MARK: - Delete Post Option
@@ -262,13 +418,12 @@ class Post2DetailViewController: UIViewController {
     }
     
     private func deletePost() {
-        let db = Firestore.firestore()
         db.collection("myposts").document(post.id).delete { error in
             if let error = error {
                 print("Error deleting post: \(error.localizedDescription)")
             } else {
                 print("Post deleted successfully!")
-                self.navigationController?.popViewController(animated: true)  // Go back to the previous screen
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }

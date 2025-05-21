@@ -2622,6 +2622,8 @@
                                         <connections>
                                             <outlet property="cellImageView" destination="wix-QP-Z5B" id="A4W-VU-eI7"/>
                                             <outlet property="cellTitleLbl" destination="gVD-VA-xao" id="LMw-TE-xgD"/>
+                                            <outlet property="imageView" destination="wix-QP-Z5B" id="49F-vO-Noc"/>
+                                            <outlet property="titleLabel" destination="gVD-VA-xao" id="qqo-vG-zIO"/>
                                             <segue destination="Hfh-H3-DVh" kind="push" identifier="diarySegue" id="KHP-3u-3wU"/>
                                         </connections>
                                     </collectionViewCell>
