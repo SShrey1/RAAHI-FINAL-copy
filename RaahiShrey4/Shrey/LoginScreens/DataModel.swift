@@ -15,7 +15,7 @@ struct User{
 
 // Sample Data
 
-let sampleUses = [
-    User(name: "Akshat", email: "akshatrawat@gmail.com", passsword: "akshat123"),
-    User(name: "Sunny", email: "sunny@gmail.com", passsword: "sunny123")
-]
+//let sampleUses = [
+//    User(name: "Akshat", email: "akshatrawat@gmail.com", passsword: "akshat123"),
+//    User(name: "Sunny", email: "sunny@gmail.com", passsword: "sunny123")
+//]

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class Insights3CollectionViewCell: UICollectionViewCell {
     
@@ -21,22 +22,21 @@ class Insights3CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var insiteCost: UILabel!
     
     func setup3(with insite: Insite) {
-        
-        insiteImage.image = insite.image
+        if let url = URL(string: insite.imageURL) {
+            insiteImage.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder"))
+        } else {
+            insiteImage.image = UIImage(named: "placeholder") // Fallback image
+        }
+
         insiteName.text = insite.title
         insiteType.text = insite.type
         insiteCost.text = insite.price
-        
+
         insiteImage.layer.cornerRadius = 20
         insiteImage.layer.masksToBounds = true
-        
+
         insiteView.layer.cornerRadius = 20
         insiteView.layer.masksToBounds = true
-        
-        
-        
-        
-        
     }
 }
 

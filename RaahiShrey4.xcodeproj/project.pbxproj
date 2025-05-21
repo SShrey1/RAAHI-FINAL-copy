@@ -34,6 +34,8 @@
 		531659402D0E889500B7664D /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5316593F2D0E889500B7664D /* GoogleSignIn */; };
 		531659422D0E889500B7664D /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 531659412D0E889500B7664D /* GoogleSignInSwift */; };
 		533DBA7F2D10776C0042F618 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533DBA7E2D10776C0042F618 /* CoreData.framework */; };
+		539077A92D55ED1D002BFA26 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 539077A82D55ED1D002BFA26 /* SDWebImageSwiftUI */; };
+		539077CA2D5896DE002BFA26 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 539077C92D5896DE002BFA26 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				539077A92D55ED1D002BFA26 /* SDWebImageSwiftUI in Frameworks */,
 				533DBA7F2D10776C0042F618 /* CoreData.framework in Frameworks */,
 				531659272D0E883E00B7664D /* FirebaseFirestoreCombine-Community in Frameworks */,
 				5316593D2D0E883E00B7664D /* FirebaseVertexAI in Frameworks */,
@@ -103,6 +106,7 @@
 				531659352D0E883E00B7664D /* FirebasePerformance in Frameworks */,
 				5316593B2D0E883E00B7664D /* FirebaseStorageCombine-Community in Frameworks */,
 				531659422D0E889500B7664D /* GoogleSignInSwift in Frameworks */,
+				539077CA2D5896DE002BFA26 /* Kingfisher in Frameworks */,
 				531659372D0E883E00B7664D /* FirebaseRemoteConfig in Frameworks */,
 				531659212D0E883E00B7664D /* FirebaseDatabase in Frameworks */,
 				531659232D0E883E00B7664D /* FirebaseDynamicLinks in Frameworks */,
@@ -218,6 +222,8 @@
 				5316593C2D0E883E00B7664D /* FirebaseVertexAI */,
 				5316593F2D0E889500B7664D /* GoogleSignIn */,
 				531659412D0E889500B7664D /* GoogleSignInSwift */,
+				539077A82D55ED1D002BFA26 /* SDWebImageSwiftUI */,
+				539077C92D5896DE002BFA26 /* Kingfisher */,
 			);
 			productName = RaahiShrey4;
 			productReference = 53D09B542CD9FFA900C2F624 /* RaahiShrey4.app */;
@@ -304,6 +310,8 @@
 			packageReferences = (
 				5316590D2D0E883E00B7664D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5316593E2D0E889500B7664D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				539077A72D55ED1D002BFA26 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				539077C82D5896DE002BFA26 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 53D09B552CD9FFA900C2F624 /* Products */;
@@ -680,6 +688,22 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		539077A72D55ED1D002BFA26 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
+		539077C82D5896DE002BFA26 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -812,6 +836,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5316593E2D0E889500B7664D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		539077A82D55ED1D002BFA26 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 539077A72D55ED1D002BFA26 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		539077C92D5896DE002BFA26 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 539077C82D5896DE002BFA26 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

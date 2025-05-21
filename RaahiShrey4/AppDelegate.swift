@@ -11,20 +11,19 @@ import GoogleSignIn
 import FirebaseAuth
 import FirebaseCore
 import CoreData
+import SDWebImage
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    
-    
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
         checkUserSignInStatus()
         print("Document directory : ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found")
+        
+        SDImageCache.shared.config.shouldUseWeakMemoryCache = true
+        SDImageCache.shared.config.shouldCacheImagesInMemory = true
         
         return true
     }
